@@ -1,51 +1,5 @@
 <head>
-  <meta charset="UTF-8">
-  <title>HouseLearning Home - Project Info</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.7;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #111;
-    }
-    code {
-      background: #f4f4f4;
-      padding: 2px 4px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-    pre {
-      background: #f4f4f4;
-      padding: 10px;
-      overflow-x: auto;
-      border-radius: 4px;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    hr {
-      margin: 40px 0;
-      border: none;
-      border-top: 1px solid #ddd;
-    }
-  </style>
+  
 </head>
 <body>
 
