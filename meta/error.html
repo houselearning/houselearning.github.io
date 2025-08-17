@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Access Restricted</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="If you believe this is a mistake, try signing in again or contact an admin for access.">
+  <meta name="keywords" content="Open Source,Learning,GitHub,HouseLearning,HTML,CSS,JS,Coding,Math,Games,Programs,Safe,Resource,Inaccessible,HouseLearning-Error-Page">
+  <meta name="author" content="This resource is currently unavailable, inaccessible, or you don’t have the required permissions.
+">
+  <meta name="robots" content="noindex" />
+  <style>
+    :root {
+      --bg: #0b0d11;
+      --card: #12151c;
+      --text: #e8ebf0;
+      --muted: #a7b0be;
+      --accent: #6aa3ff;
+      --accent-2: #ff6a8a;
+      --border: #1e2330;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --text: #111827;
+        --muted: #4b5563;
+        --accent: #2563eb;
+        --accent-2: #db2777;
+        --border: #e5e7eb;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 70% -10%, color-mix(in oklab, var(--accent) 18%, transparent), transparent) ,
+                  radial-gradient(900px 500px at -10% 110%, color-mix(in oklab, var(--accent-2) 16%, transparent), transparent),
+                  var(--bg);
+      color: var(--text);
+      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: color-mix(in oklab, var(--card) 92%, transparent);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-weight: 600;
+      padding: .4rem .7rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: color-mix(in oklab, var(--card) 98%, transparent);
+    }
+    h1 {
+      margin: 1rem 0 .5rem;
+      font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem);
+      letter-spacing: .2px;
+    }
+    p { margin: .25rem 0 0; color: var(--muted); }
+    .actions {
+      display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--card) 98%, transparent);
+      color: var(--text);
+      padding: .75rem 1rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform .05s ease, background .2s ease, border-color .2s ease;
+      cursor: pointer;
+      line-height: 1;
+      display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--accent) 40%, var(--border)); }
+    .btn.primary {
+      background: color-mix(in oklab, var(--accent) 16%, var(--card));
+      border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+    }
+    details {
+      margin-top: 1rem;
+      border-top: 1px dashed var(--border);
+      padding-top: 1rem;
+      color: var(--muted);
+    }
+    code, kbd {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: .95em;
+      background: color-mix(in oklab, var(--card) 92%, transparent);
+      border: 1px solid var(--border);
+      padding: .15rem .35rem;
+      border-radius: 6px;
+    }
+    .footer {
+      margin-top: 1.25rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="alert" aria-live="polite">
+    <span class="badge" aria-hidden="true">🔒 Access Restricted</span>
+    <h1>This resource is currently unavailable, inaccessible, or you don’t have the required permissions.</h1>
+    <p>If you believe this is a mistake, try signing in again or contact an admin for access.</p>
+
+    <div class="actions">
+      <a class="btn primary" href="/" id="homeBtn">Go to Home</a>
+      <button class="btn" id="retryBtn" type="button">Retry</button>
+      <a class="btn" href="mailto:support@example.com?subject=Access%20Request&body=URL:%20{{location}}">Contact Support</a>
+    </div>
+
+    <details>
+      <summary>Technical info</summary>
+      <p>Status: <code id="status">403 / 404</code></p>
+      <p>URL: <code id="url"></code></p>
+      <p>Timestamp: <code id="ts"></code></p>
+      <p>Request ID: <code id="reqid">auto</code></p>
+    </details>
+
+    <div class="footer">
+      Tip: If you’re using multiple accounts, make sure you’re signed into the right one.
+    </div>
+  </main>
+
+  <script>
+    // Fill diagnostic fields
+    (function () {
+      const q = new URLSearchParams(location.search);
+      const status = q.get("status") || (document.referrer ? "403" : "404");
+      const reqid = q.get("rid") || Math.random().toString(36).slice(2, 10);
+      document.getElementById("status").textContent = status;
+      document.getElementById("url").textContent = location.href;
+      document.getElementById("ts").textContent = new Date().toISOString();
+      document.getElementById("reqid").textContent = reqid;
+
+      // Retry just reloads (kept simple)
+      document.getElementById("retryBtn").addEventListener("click", () => location.reload());
+
+      // Replace support email body placeholder with actual location
+      for (const a of document.querySelectorAll('a[href^="mailto:"]')) {
+        a.href = a.href.replace("%7B%7Blocation%7D%7D", encodeURIComponent(location.href));
+      }
+
+       document.getElementById("homeBtn").href = "https://houselearning.github.io/";
+    })();
+  </script>
+</body>
+</html>
