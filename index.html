@@ -1,23 +1,242 @@
-<HTML>
-    <HEAD>
-        <title>HouseLearning</title>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8YSM87GDVW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HouseLearning — Learn Anything</title>
+  <meta name="description" content="HouseLearning — bite-sized lessons, practice, and projects for curious students." />
+  <style>
+    :root{
+      --accent:#0ea5a4;
+      --dark:#0f172a;
+      --muted:#64748b;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.06);
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f7fbff 0%, #eef6f8 100%);color:var(--dark);line-height:1.45}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:transparent}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav{display:flex;gap:12px;align-items:center}
+    a.button{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:#04202a}
+    .btn-ghost{background:transparent;border:1px solid rgba(12,15,20,0.06)}
 
-  gtag('config', 'G-8YSM87GDVW');
-</script>
-        <meta charset="UTF-8">
-  <meta name="description" content="A Safe, Open-source website developed by HouseLearning">
-  <meta name="keywords" content="Open Source,Learning,GitHub,HouseLearning,HTML,CSS,JS,Coding,Math,Games,Programs,Safe">
-  <meta name="author" content="HouseLearning">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </HEAD>
-    <BODY>
-<meta http-equiv="refresh" content="0; URL=https://houselearning.github.io/home">
-    </BODY>
-</HTML>
+    .container{max-width:1150px;margin:0 auto;padding:30px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding-top:14px}
+    .headline{font-size:34px;font-weight:800;margin:0 0 14px}
+    .sub{color:var(--muted);margin:0 0 20px}
+    .searchbar{display:flex;gap:8px;background:var(--card);padding:8px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06);align-items:center}
+    .searchbar input{flex:1;border:0;outline:0;padding:12px;font-size:15px;border-radius:8px}
+    .topics{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .topic{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--dark);font-size:13px}
 
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 10px 30px rgba(16,24,40,0.06);padding:18px}
+    .stats{display:flex;gap:12px;margin-top:14px}
+    .stat{flex:1;text-align:center}
+    .stat h3{margin:0;font-size:20px}
+    .stat p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+    .courses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    .course{display:flex;flex-direction:column;gap:12px;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(16,24,40,0.03)}
+    .course .thumb{height:110px;border-radius:10px;background:linear-gradient(135deg,#fef3c7,#fde68a);display:flex;align-items:end;padding:10px;font-weight:700}
+    .course h4{margin:0;font-size:16px}
+    .course p{margin:4px 0 0;color:var(--muted);font-size:13px}
+    .course .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+
+    section.features{display:flex;gap:16px;margin-top:34px}
+    .feature{flex:1;padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(16,24,40,0.03)}
+    .feature h5{margin:0 0 8px}
+
+    .testimonials{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+
+    footer{margin-top:40px;padding:30px 0;color:var(--muted)}
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr 320px}
+      .courses{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .hero{grid-template-columns:1fr;}
+      .courses{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">HL</div>
+      <div>
+        <div style="font-weight:800">HouseLearning</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Learn anything — fast, free, focused</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="https://houselearning.github.io/safe-library">SafeLibray</a>
+      <a href="https://houselearning.github.io/home/about">About</a>
+      <a href="https://houselearning.github.io/apply">Apply</a>
+      <a href="https://github.com/houselearning">View on GitHub</a>
+      <a class="button btn-ghost" href="https://houselearning.github.io/log-in.html">Log in</a>
+      <a class="button btn-primary" href="https://houselearning.github.io/sign-up.html">Sign up</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1 class="headline">Human-first learning. Bite-sized lessons that actually stick.</h1>
+        <p class="sub">Practice problems, micro-lessons, interactive projects and real feedback — all free. Start with math, science, coding and reading.</p>
+
+        <div class="topics" aria-hidden="false">
+          <div class="topic">Math</div>
+          <div class="topic">Reading</div>
+          <div class="topic">Coding</div>
+          <div class="topic">Science</div>
+          <div class="topic">Games</div>
+          <div class="topic">Life Skills</div>
+        </div>
+
+        <div class="stats">
+          <div class="stat card card-inline">
+            <h3>1,000+</h3>
+            <p>Students</p>
+          </div>
+          <div class="stat card card-inline">
+            <h3>580+</h3>
+            <p>Lessons</p>
+          </div>
+          <div class="stat card card-inline">
+            <h3>Free</h3>
+            <p>Forever</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin:0 0 8px">Featured Learning Paths</h3>
+        <p style="margin:0 0 12px;color:var(--muted);font-size:14px">Pick a path, follow lessons, unlock practice and projects.</p>
+
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div style="width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,#c7f9f6,#7dd3fc);display:flex;align-items:center;justify-content:center;font-weight:700">M</div>
+            <div>
+              <div style="font-weight:700">Mastering Fractions</div>
+              <div style="font-size:13px;color:var(--muted)"><a href="https://houselearning.github.io/home/math/grade4/fractions-add-subtract.html">Start Lesson</a></div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center">
+            <div style="width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,#fde68a,#fca5a5);display:flex;align-items:center;justify-content:center;font-weight:700">A</div>
+            <div>
+              <div style="font-weight:700">Algebra Basics</div>
+              <div style="font-size:13px;color:var(--muted)"><a href="https://houselearning.github.io/home/math-page.html#grade9">Start Lesson</a></div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center">
+            <div style="width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,#d6bcfa,#bde0fe);display:flex;align-items:center;justify-content:center;font-weight:700">CS</div>
+            <div>
+              <div style="font-weight:700">Intro to Programming</div>
+              <div style="font-size:13px;color:var(--muted)"><a href="https://houselearning.github.io/home/computerscience/">Start Lesson</a></div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </section>
+
+    <section id="courses">
+      <h2 style="margin-top:28px">Popular Courses</h2>
+      <div class="courses" aria-live="polite">
+        <article class="course" tabindex="0">
+          <div class="thumb">Algebra</div>
+          <h4>Algebra I — fundamentals</h4>
+          <p>Short lessons, instant practice, and step-by-step hints.</p>
+          <div class="meta">
+            <small style="color:var(--muted)">Beginner · 10 lessons</small>
+            <a class="button btn-primary" href="https://houselearning.github.io/home/math-page.html#grade9">Start</a>
+          </div>
+        </article>
+
+        <article class="course" tabindex="0">
+          <div class="thumb">Fractions</div>
+          <h4>Fractions & Decimals</h4>
+          <p>Visual models, problem sets, and quick checks.</p>
+          <div class="meta">
+            <small style="color:var(--muted)">Grade 3–6 · 12 lessons</small>
+            <a class="button btn-primary" href="https://houselearning.github.io/home/math-page.html#grade3">Start</a>
+          </div>
+        </article>
+
+        <article class="course" tabindex="0">
+          <div class="thumb">CS</div>
+          <h4>Intro to Programming</h4>
+          <p>Block-to-code lessons, mini projects, and badges.</p>
+          <div class="meta">
+            <small style="color:var(--muted)">All ages · Projects</small>
+            <a class="button btn-primary" href="https://houselearning.github.io/home/computer-science-page.html">Start</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <h5>Adaptive practice</h5>
+          <p style="color:var(--muted)">Practice that adapts to each student's skill level — less repeat, more progress.</p>
+        </div>
+        <div class="feature">
+          <h5>Projects & badges</h5>
+          <p style="color:var(--muted)">Build real things: interactive projects that show learning in action.</p>
+        </div>
+        <div class="feature">
+          <h5>Teacher tools</h5>
+          <p style="color:var(--muted)">Assign lessons, see progress, and give targeted feedback.</p>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="card">
+          <strong>"Saved my summer learning"</strong>
+          <p style="color:var(--muted)">"My kid started fractions from zero and jumped two grade levels in three months." — Sam, parent</p>
+        </div>
+        <div class="card">
+          <strong>"Perfect for quick practice"</strong>
+          <p style="color:var(--muted)">"Lessons are short and actually keep kids engaged." — Priya, teacher</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:34px">
+      <h2>Projects kids love</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px">
+        <div class="card">Interactive story builder — write a choose-your-own-adventure.</div>
+        <div class="card">Math city — build a city by solving problems (perfect for classrooms).</div>
+        <div class="card">Make a mini-game — code and share your creation.</div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div style="font-weight:800">HouseLearning</div>
+            <div style="font-size:13px;color:var(--muted);margin-top:6px">© HouseLearning — free learning for curious people</div>
+          </div>
+          <div style="display:flex;gap:18px;align-items:center">
+            <a href="https://houselearning.github.io/home/about">About</a>
+            <a href="https://github.com/houselearning/apply?tab=readme-ov-file#available-volunteer-jobs">Careers</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
