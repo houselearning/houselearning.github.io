@@ -145,6 +145,7 @@
     links.appendChild(ce("a", { href: "/index.html" }, ["Home"]));
     links.appendChild(ce("a", { href: "/apply/" }, ["Apply"]));
     links.appendChild(ce("a", { href: "/staff/" }, ["Staff"]));
+    links.appendChild(ce("a", { href: "/docs/" }, ["Documentation"]));
     links.appendChild(ce("a", { href: "https://forms.gle/4rdPFAX4g8apGFpv6", target: "_blank" }, ["Contact"]));
 
     // Right Logo
