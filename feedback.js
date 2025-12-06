@@ -224,7 +224,7 @@
         border-radius: 6px;
       }
 
-      /* Mobile bottom-sheet styles */
+      /* Mobile bottom-sheet styles (applies automatically on small screens) */
       @media (max-width: 600px) {
         .survey-popup {
           left: 0 !important;
@@ -246,17 +246,137 @@
         .survey-popup.sheet-open {
           transform: translateY(0);
         }
+
+        /* handle at the top so it looks like a sheet */
+        .survey-popup .sheet-handle {
+          width: 100%;
+          display:flex;
+          justify-content:center;
+          margin-bottom:8px;
+        }
+        .survey-popup .sheet-handle .handle-bar {
+          width: 56px;
+          height: 6px;
+          background: #e0e0e0;
+          border-radius: 6px;
+        }
+
+        /* content area scrolls, leave space for footer */
         .survey-content {
-          max-height: calc(90vh - 80px); /* allow header/footer */
+          max-height: calc(90vh - 120px); /* header + footer + handle */
           overflow-y: auto;
           -webkit-overflow-scrolling: touch;
+          padding-bottom: 12px;
         }
-        /* Make close button more prominent on mobile */
-        .survey-header { padding: 8px 6px; }
+
+        /* footer fixed inside the sheet */
+        .survey-popup .sheet-footer {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 12px;
+          box-shadow: 0 -8px 20px rgba(0,0,0,0.06);
+          background: #fff;
+          display:flex;
+          gap:8px;
+          justify-content:space-between;
+          align-items:center;
+        }
+        .survey-popup .sheet-footer .open-survey-btn {
+          flex: 1 1 auto;
+          margin: 0;
+        }
+        .survey-popup .sheet-footer .close-sidebar-btn {
+          flex: 0 0 auto;
+          margin: 0;
+        }
+
+        /* make smileys larger and easier to tap */
+        .smiley-container { gap: 6px; justify-content: space-around; padding: 6px 6px; }
+        .smiley-btn { padding: 10px; border-radius: 10px; }
+        .smiley-btn svg { width: 48px; height: 48px; }
+
+        /* show a caption row with five evenly spaced captions under the icons */
+        .smiley-labels { display: flex; justify-content: space-between; font-size: 12px; color: #666; margin-top: 6px; padding: 0 6px; width: 100%; box-sizing: border-box; }
+        .smiley-labels span { width: 20%; text-align: center; }
+
+        /* small adjustments to header */
+        .survey-header { padding: 8px 6px; gap:8px; }
         .survey-close { font-size: 20px; padding: 6px; }
+
         /* Ensure body isn't scrollable behind full sheet on open */
         body.survey-sheet-active { overflow: hidden; }
       }
+
+      /* Forced-mobile: same mobile styles but applied whenever the page is in "forced mobile" mode */
+      .survey-forced-mobile .survey-popup {
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 90vh;
+        max-height: 90vh;
+        border-radius: 12px 12px 0 0;
+        padding: 12px 12px 18px;
+        box-sizing: border-box;
+        overflow: hidden;
+        transform: translateY(100%);
+        transition: transform 320ms cubic-bezier(.22,.9,.31,1);
+        -webkit-transition: transform 320ms cubic-bezier(.22,.9,.31,1);
+        will-change: transform;
+      }
+      .survey-forced-mobile .survey-popup.sheet-open { transform: translateY(0); }
+
+      .survey-forced-mobile .survey-popup .sheet-handle {
+        width: 100%;
+        display:flex;
+        justify-content:center;
+        margin-bottom:8px;
+      }
+      .survey-forced-mobile .survey-popup .sheet-handle .handle-bar {
+        width: 56px;
+        height: 6px;
+        background: #e0e0e0;
+        border-radius: 6px;
+      }
+
+      .survey-forced-mobile .survey-content {
+        max-height: calc(90vh - 120px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 12px;
+      }
+
+      .survey-forced-mobile .survey-popup .sheet-footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px;
+        box-shadow: 0 -8px 20px rgba(0,0,0,0.06);
+        background: #fff;
+        display:flex;
+        gap:8px;
+        justify-content:space-between;
+        align-items:center;
+      }
+      .survey-forced-mobile .survey-popup .sheet-footer .open-survey-btn { flex: 1 1 auto; margin: 0; }
+      .survey-forced-mobile .survey-popup .sheet-footer .close-sidebar-btn { flex: 0 0 auto; margin: 0; }
+
+      .survey-forced-mobile .smiley-container { gap: 6px; justify-content: space-around; padding: 6px 6px; }
+      .survey-forced-mobile .smiley-btn { padding: 10px; border-radius: 10px; }
+      .survey-forced-mobile .smiley-btn svg { width: 48px; height: 48px; }
+
+      .survey-forced-mobile .smiley-labels { display: flex; justify-content: space-between; font-size: 12px; color: #666; margin-top: 6px; padding: 0 6px; width: 100%; box-sizing: border-box; }
+      .survey-forced-mobile .smiley-labels span { width: 20%; text-align: center; }
+
+      .survey-forced-mobile .survey-header { padding: 8px 6px; gap:8px; }
+      .survey-forced-mobile .survey-close { font-size: 20px; padding: 6px; }
+
+      .survey-forced-mobile body.survey-sheet-active, .survey-forced-mobile .survey-sheet-active { overflow: hidden; }
+
     `;
     // FIX: Check if head exists
     (document.head || document.documentElement).appendChild(s);
@@ -286,6 +406,13 @@
   function setForceMobile(val) {
     if (val === null) localStorage.removeItem('survey_force_mobile_v1');
     else localStorage.setItem('survey_force_mobile_v1', val ? '1' : '0');
+
+    // Apply/remove class immediately so popups pick up styles
+    try {
+      if (val === true) document.documentElement.classList.add('survey-forced-mobile');
+      else document.documentElement.classList.remove('survey-forced-mobile');
+    } catch(e){}
+
     // show toast summarizing new mode
     if (val === null) showToggleToast('View mode: auto');
     else showToggleToast(val ? 'Forced mobile view' : 'Forced desktop view');
@@ -502,10 +629,18 @@
       // INSERT SMILEY BAR
       const smileyCont = el("div", { className: "smiley-container" });
       const labels = el("div", { className: "smiley-labels" });
-      labels.innerHTML = `<span>Unhappy</span><span>Delighted</span>`;
+
+      // On mobile we want 5 captions (one under each icon); on desktop keep the original left/right labels
+      const mobileMode = isSmallScreen();
+      if (mobileMode) {
+        // five captions evenly spaced (first = Unhappy, last = Delighted)
+        labels.innerHTML = `<span>Unhappy</span><span></span><span></span><span></span><span>Delighted</span>`;
+      } else {
+        labels.innerHTML = `<span style="text-align:left">Unhappy</span><span style="text-align:right">Delighted</span>`;
+      }
 
       [1, 2, 3, 4, 5].forEach(rating => {
-        const btn = el("button", { type: "button", className: "smiley-btn" });
+        const btn = el("button", { type: "button", className: "smiley-btn", title: String(rating) });
         btn.innerHTML = SMILEYS[rating];
         btn.onclick = () => {
           // Deselect others
@@ -532,13 +667,14 @@
     screenRow.appendChild(fileInput);
     content.appendChild(screenRow);
 
-    // Buttons
+    // Buttons (created but may be moved into footer on mobile)
     const submitRow = el("div", { style: "display:flex;gap:8px;margin-top:12px" });
     const submitBtn = el("button", { className: "open-survey-btn", innerText: "Submit" });
     const laterBtn = el("button", { className: "close-sidebar-btn", innerText: "Close", style: "margin-top:12px;" });
     
     submitRow.appendChild(submitBtn);
     submitRow.appendChild(laterBtn);
+    // by default append to content; on mobile we'll move into a fixed footer
     content.appendChild(submitRow);
 
     // Events
@@ -581,7 +717,6 @@
     // After building UI elements, wire stop button behavior + initial state
     const stopBtn = popup.querySelector('.stop-feedback-btn');
     if (stopBtn) {
-      // set initial disabled styling
       stopBtn.classList.toggle('disabled', !getFeedbackEnabled());
       stopBtn.onclick = (e) => {
         e.stopPropagation();
@@ -590,11 +725,23 @@
       };
     }
 
-    // Mobile: bottom-sheet behavior with swipe to dismiss
+    // Mobile: bottom-sheet behavior with swipe to dismiss + handle + footer
     const mobile = isSmallScreen();
     if (mobile) {
-      // Prepare sheet initial state
       popup.classList.add('mobile-sheet');
+
+      // add top handle for visual affordance
+      const handle = el('div', { className: 'sheet-handle' });
+      handle.innerHTML = '<div class="handle-bar"></div>';
+      popup.insertBefore(handle, popup.firstChild);
+
+      // create a fixed footer and move buttons into it
+      const footer = el('div', { className: 'sheet-footer' });
+      // remove submitRow from content (if appended) and put into footer
+      try { submitRow.parentElement && submitRow.parentElement.removeChild(submitRow); } catch(e){}
+      footer.appendChild(submitRow);
+      popup.appendChild(footer);
+
       // append hidden first so we can measure
       document.body.appendChild(popup);
       // register as active popup
@@ -610,7 +757,6 @@
       // handle close with animation
       function animateCloseAndRemove() {
         popup.classList.remove('sheet-open');
-        // restore body scroll after transition
         const onEnd = () => {
           try { popup.removeEventListener('transitionend', onEnd); } catch(e){}
           try { document.body.classList.remove('survey-sheet-active'); } catch(e){}
@@ -623,11 +769,9 @@
       const closeBtn = popup.querySelector('.survey-close');
       if (closeBtn) closeBtn.onclick = () => showCloseSurveyWarning(popup) || animateCloseAndRemove();
 
-      // also make "Close" (laterBtn) animate
-      const laterBtn = popup.querySelector('.close-sidebar-btn');
       if (laterBtn) laterBtn.onclick = () => animateCloseAndRemove();
 
-      // Touch drag to dismiss
+      // Touch drag to dismiss (existing logic retained)
       let startY = 0, currentY = 0, dragging = false, sheetHeight = popup.getBoundingClientRect().height;
       const contentEl = popup.querySelector('.survey-content');
 
@@ -635,9 +779,8 @@
         if (ev.touches.length !== 1) return;
         startY = ev.touches[0].clientY;
         sheetHeight = popup.getBoundingClientRect().height;
-        // only start drag if content is scrolled to top OR initial touch is on header area
         const target = ev.target;
-        const allowPull = contentEl.scrollTop === 0 || target.closest('.survey-header');
+        const allowPull = contentEl.scrollTop === 0 || target.closest('.survey-header') || target.closest('.sheet-handle');
         if (!allowPull) return;
         dragging = true;
         popup.style.transition = 'none';
@@ -647,9 +790,7 @@
         if (!dragging || ev.touches.length !== 1) return;
         currentY = ev.touches[0].clientY;
         const delta = Math.max(0, currentY - startY);
-        // move sheet down by delta (limit)
         popup.style.transform = `translateY(${delta}px)`;
-        // prevent page from scrolling while dragging
         ev.preventDefault();
       }, { passive: false });
 
@@ -660,16 +801,13 @@
         const delta = Math.max(0, currentY - startY);
         const dismissThreshold = sheetHeight * 0.25;
         if (delta > dismissThreshold) {
-          // dismiss
           popup.style.transform = `translateY(100%)`;
-          // cleanup after transition
           popup.addEventListener('transitionend', function _t() {
             popup.removeEventListener('transitionend', _t);
             try { document.body.classList.remove('survey-sheet-active'); } catch(e){}
             try { popup.remove(); } catch(e){}
           });
         } else {
-          // snap back
           popup.style.transform = `translateY(0)`;
         }
       }, { passive: true });
@@ -677,12 +815,11 @@
     } else {
       // Desktop: normal append + close wiring (unchanged)
       document.body.appendChild(popup);
-      // register as active popup
       window._survey_feedback_popup = popup;
 
       popup.querySelector(".survey-close").onclick = () => showCloseSurveyWarning(popup);
-      const laterBtn = popup.querySelector(".close-sidebar-btn");
-      if (laterBtn) laterBtn.onclick = () => popup.remove();
+      const laterBtnDesktop = popup.querySelector(".close-sidebar-btn");
+      if (laterBtnDesktop) laterBtnDesktop.onclick = () => popup.remove();
     }
 
     return popup;
