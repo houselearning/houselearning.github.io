@@ -223,6 +223,40 @@
         cursor: pointer;
         border-radius: 6px;
       }
+
+      /* Mobile bottom-sheet styles */
+      @media (max-width: 600px) {
+        .survey-popup {
+          left: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 90vh;
+          max-height: 90vh;
+          border-radius: 12px 12px 0 0;
+          padding: 12px 12px 18px;
+          box-sizing: border-box;
+          overflow: hidden;
+          transform: translateY(100%);
+          transition: transform 320ms cubic-bezier(.22,.9,.31,1);
+          -webkit-transition: transform 320ms cubic-bezier(.22,.9,.31,1);
+          will-change: transform;
+        }
+        .survey-popup.sheet-open {
+          transform: translateY(0);
+        }
+        .survey-content {
+          max-height: calc(90vh - 80px); /* allow header/footer */
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        /* Make close button more prominent on mobile */
+        .survey-header { padding: 8px 6px; }
+        .survey-close { font-size: 20px; padding: 6px; }
+        /* Ensure body isn't scrollable behind full sheet on open */
+        body.survey-sheet-active { overflow: hidden; }
+      }
     `;
     // FIX: Check if head exists
     (document.head || document.documentElement).appendChild(s);
@@ -240,6 +274,43 @@
   
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // NEW: persistent force-mobile helpers (null = auto)
+  function getForceMobile() {
+    const v = localStorage.getItem('survey_force_mobile_v1');
+    if (v === '1') return true;
+    if (v === '0') return false;
+    return null;
+  }
+  function setForceMobile(val) {
+    if (val === null) localStorage.removeItem('survey_force_mobile_v1');
+    else localStorage.setItem('survey_force_mobile_v1', val ? '1' : '0');
+    // show toast summarizing new mode
+    if (val === null) showToggleToast('View mode: auto');
+    else showToggleToast(val ? 'Forced mobile view' : 'Forced desktop view');
+  }
+  function toggleForceMobile() {
+    const curr = getForceMobile();
+    const next = curr === true ? false : true;
+    setForceMobile(next);
+    // if a popup is open, refresh it so layout adapts
+    try {
+      if (window._survey_feedback_popup && document.body.contains(window._survey_feedback_popup)) {
+        window._survey_feedback_popup.remove();
+        setTimeout(() => { try { window.SurveyFeedback.openSurveyNow(); } catch(e){} }, 220);
+      }
+    } catch(e){}
+  }
+
+  // UPDATED: small-screen detector used by createSurveyPopup
+  function isSmallScreen() {
+    try {
+      const forced = getForceMobile();
+      if (forced === true) return true;
+      if (forced === false) return false;
+      return window.innerWidth <= 600;
+    } catch (e) { return false; }
   }
 
   function getAnonId() {
@@ -279,7 +350,13 @@
     }
 
     // Keyboard shortcuts: ALT+W toggles enable/disable; ALT+F opens the feedback dialog
+    // NEW: track pressed keys to detect Alt+T+M simultaneously
+    const _survey_pressedKeys = new Set();
     document.addEventListener('keydown', (ev) => {
+      // add key to pressed set
+      const k = (ev.key || '').toLowerCase();
+      _survey_pressedKeys.add(k);
+
       // ignore if typing in inputs/textarea or contentEditable
       const tag = (ev.target && ev.target.tagName) ? ev.target.tagName.toLowerCase() : null;
       if (tag === 'input' || tag === 'textarea' || ev.target.isContentEditable) return;
@@ -302,6 +379,19 @@
         }
         return;
       }
+
+      // ALT + T + M (pressed together) toggles forced mobile/desktop
+      if (ev.altKey && _survey_pressedKeys.has('t') && _survey_pressedKeys.has('m')) {
+        ev.preventDefault();
+        toggleForceMobile();
+        return;
+      }
+    });
+
+    // remove keys on keyup so the pressed set stays accurate
+    document.addEventListener('keyup', (ev) => {
+      const k = (ev.key || '').toLowerCase();
+      _survey_pressedKeys.delete(k);
     });
   }
 
@@ -372,7 +462,24 @@
   addStyles();
 
   function createSurveyPopup(questions = []) {
+    // Prevent multiple instances: return existing popup if still in DOM
+    if (window._survey_feedback_popup && document.body.contains(window._survey_feedback_popup)) {
+      // bring it to front slightly
+      try { window._survey_feedback_popup.style.zIndex = String(parseInt(window._survey_feedback_popup.style.zIndex || "999999") + 1); } catch(e){}
+      return window._survey_feedback_popup;
+    }
+
     const popup = el("div", { className: "survey-popup", role: "dialog" });
+
+    // Monkey-patch remove now so any event handlers that call popup.remove() will also clear the singleton ref
+    (function (p) {
+      const origRemove = p.remove ? p.remove.bind(p) : null;
+      p.remove = function () {
+        try { if (origRemove) origRemove(); } catch (e) {}
+        if (window._survey_feedback_popup === p) window._survey_feedback_popup = null;
+      };
+    })(popup);
+
     // Add a Stop Feedback Window button to the right of the title.
     popup.innerHTML = `
       <div class="survey-header" style="display:flex;align-items:center;justify-content:space-between;">
@@ -483,7 +590,101 @@
       };
     }
 
-    document.body.appendChild(popup);
+    // Mobile: bottom-sheet behavior with swipe to dismiss
+    const mobile = isSmallScreen();
+    if (mobile) {
+      // Prepare sheet initial state
+      popup.classList.add('mobile-sheet');
+      // append hidden first so we can measure
+      document.body.appendChild(popup);
+      // register as active popup
+      window._survey_feedback_popup = popup;
+
+      // prevent background scroll while sheet active
+      setTimeout(() => {
+        document.body.classList.add('survey-sheet-active');
+        // trigger open animation
+        requestAnimationFrame(() => popup.classList.add('sheet-open'));
+      }, 10);
+
+      // handle close with animation
+      function animateCloseAndRemove() {
+        popup.classList.remove('sheet-open');
+        // restore body scroll after transition
+        const onEnd = () => {
+          try { popup.removeEventListener('transitionend', onEnd); } catch(e){}
+          try { document.body.classList.remove('survey-sheet-active'); } catch(e){}
+          try { popup.remove(); } catch(e){}
+        };
+        popup.addEventListener('transitionend', onEnd);
+      }
+
+      // wire close buttons to animate down first
+      const closeBtn = popup.querySelector('.survey-close');
+      if (closeBtn) closeBtn.onclick = () => showCloseSurveyWarning(popup) || animateCloseAndRemove();
+
+      // also make "Close" (laterBtn) animate
+      const laterBtn = popup.querySelector('.close-sidebar-btn');
+      if (laterBtn) laterBtn.onclick = () => animateCloseAndRemove();
+
+      // Touch drag to dismiss
+      let startY = 0, currentY = 0, dragging = false, sheetHeight = popup.getBoundingClientRect().height;
+      const contentEl = popup.querySelector('.survey-content');
+
+      popup.addEventListener('touchstart', (ev) => {
+        if (ev.touches.length !== 1) return;
+        startY = ev.touches[0].clientY;
+        sheetHeight = popup.getBoundingClientRect().height;
+        // only start drag if content is scrolled to top OR initial touch is on header area
+        const target = ev.target;
+        const allowPull = contentEl.scrollTop === 0 || target.closest('.survey-header');
+        if (!allowPull) return;
+        dragging = true;
+        popup.style.transition = 'none';
+      }, { passive: true });
+
+      popup.addEventListener('touchmove', (ev) => {
+        if (!dragging || ev.touches.length !== 1) return;
+        currentY = ev.touches[0].clientY;
+        const delta = Math.max(0, currentY - startY);
+        // move sheet down by delta (limit)
+        popup.style.transform = `translateY(${delta}px)`;
+        // prevent page from scrolling while dragging
+        ev.preventDefault();
+      }, { passive: false });
+
+      popup.addEventListener('touchend', (ev) => {
+        if (!dragging) return;
+        dragging = false;
+        popup.style.transition = '';
+        const delta = Math.max(0, currentY - startY);
+        const dismissThreshold = sheetHeight * 0.25;
+        if (delta > dismissThreshold) {
+          // dismiss
+          popup.style.transform = `translateY(100%)`;
+          // cleanup after transition
+          popup.addEventListener('transitionend', function _t() {
+            popup.removeEventListener('transitionend', _t);
+            try { document.body.classList.remove('survey-sheet-active'); } catch(e){}
+            try { popup.remove(); } catch(e){}
+          });
+        } else {
+          // snap back
+          popup.style.transform = `translateY(0)`;
+        }
+      }, { passive: true });
+
+    } else {
+      // Desktop: normal append + close wiring (unchanged)
+      document.body.appendChild(popup);
+      // register as active popup
+      window._survey_feedback_popup = popup;
+
+      popup.querySelector(".survey-close").onclick = () => showCloseSurveyWarning(popup);
+      const laterBtn = popup.querySelector(".close-sidebar-btn");
+      if (laterBtn) laterBtn.onclick = () => popup.remove();
+    }
+
     return popup;
   }
 
@@ -525,6 +726,13 @@
     if (!userAcceptedCookies()) return;
     // check persisted enabled flag
     if (!getFeedbackEnabled()) return;
+
+    // NEW: roll probability so the popup appears less commonly when enabled.
+    // Use DURING_SESSION_PROB when the user has visited more than 1 page in this session,
+    // otherwise use BETWEEN_SESSION_PROB.
+    const rollProb = (activity.pagesViewed > 1) ? DURING_SESSION_PROB : BETWEEN_SESSION_PROB;
+    if (Math.random() > rollProb) return;
+
     setTimeout(async () => {
       try { await ensureFirebase(); } catch(e){}
       const uid = firebase.auth && firebase.auth().currentUser ? firebase.auth().currentUser.uid : getAnonId();
