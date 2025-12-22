@@ -150,7 +150,7 @@
 
     // Right Logo
     var logoContainer = ce("div", { class: "hl-footer-logo" });
-    var logo = ce("img", { src: "https://houselearning.github.io/android-chrome-192x192.png", alt: "HouseLearning Logo" });
+    var logo = ce("img", { src: "https://houselearning.org/android-chrome-192x192.png", alt: "HouseLearning Logo" });
     logoContainer.appendChild(logo);
 
     content.appendChild(links);

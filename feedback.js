@@ -1,7 +1,3 @@
-// survey-feedback.js
-// Drop-in script. Self-contained. Saves to Firestore.
-// Includes 5-point Sentiment Bar (Smileys).
-// Fixed "Cannot read properties of null" bug.
 
 (function () {
   // -----------------------
