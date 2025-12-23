@@ -1,1643 +1,1644 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://houselearning.org/</loc>
-  <lastmod>2025-06-25T00:09:05+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://www.houselearning.org/</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://www.houselearning.org/home/about</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math-page.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/auth/</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science-page.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/fractions-add-subtract.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computer-science-page.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/math-page.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/computerscience/</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/computer-science-page.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/about</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/promos/beans101.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/apply/</loc>
-  <lastmod>2025-06-22T00:06:46+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/timesort.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/science-page.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/numberrace.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/games.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/sciencerace.htm</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://www.houselearning.org/home/blog.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/index.html</loc>
-  <lastmod>2025-06-25T00:09:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/blog/motivation/rule-of-dopamine.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/about.html</loc>
-  <lastmod>2025-06-25T00:09:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/games/timesort.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/promos/index.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/assets/driftboss/</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/countingnumbers.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/games/numberrace.html</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/addandsubtract.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/games/sciencerace.htm</loc>
+	<lastmod>2025-12-23T20:28:35+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/multiplyanddivide.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/safe-library/</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/fractionanddecimals.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/numbers-to-100.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/basicgeometry.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/place-value.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/measurementandtime.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/add-within-20.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/moneysort.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/subtract-within-20.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/basicalgebra.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/word-problems.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/coords.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/2d-shapes.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/stats.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/3d-shapes.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/wordproblems.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/measurement.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/patternsequ.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/time-hour.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/exponents.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade1/money-coins.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/ratios.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/numbers-to-1000.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/proportions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/place-value-hto.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/angles.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/two-digit-addition.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/perimiter.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/two-digit-subtraction.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/volumesurface.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/intro-multiplication.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/graphequations.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/intro-division.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/linearfunctions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/fractions-basics.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/games/mathmaze.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/measurement.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/games/fractionfrenzy.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/time-quarter-half.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/games/shapesort.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade2/word-problems-as.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/games/mathmemory.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/multiplication-facts.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/games/timetravel.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/division-facts.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/games/equationescape.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/area-perimeter-rectangles.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/games/graphgenius.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/equivalent-fractions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/math/games/moneymadness.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/decimals-tenths.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/ecosystems.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/rounding.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/forcesandmotion.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/word-problems-md.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/statesofmatter.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/bar-graphs.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/electricity.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/time-minute.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/photosynthesis.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade3/word-problems-fractions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/animalsandadaptations.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/multidigit-as.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/solarsystem.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/multiplication-2-3-digit.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/humanbody.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/division-remainders.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/weather.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/factors-multiples.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/rocksandminerals.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/fractions-multiply.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/soundwaves.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/decimals-th.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/lightandoptics.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/geometry-angles-lines.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/dinosaurfossils.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/measurement-conversion.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/biomes.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade4/graphs-data.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/ecoexplorer.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/long-division.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/gravityjump.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/multiplying-fractions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/energyquest.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/dividing-fractions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/animalkingdom.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/add-subtract-decimals.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/spaceexplorer.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/multiply-divide-decimals.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/bodysystems.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/volume-cubes.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/weatherwizard.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/surface-area-cubes.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/rockhunter.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/pemdas.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/science/games/lightlab.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/coordinate-plane.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade5/intro-percentages.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/ratios-proportions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/unit-rates.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/percent-problems.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/integers-add-subtract.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/integers-mult-div.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/absolute-value.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/expressions-equations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/area-triangles-parallelograms.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/sql/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/volume-rectangular-prisms.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade6/statistics-mean-median-mode.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/one-step-equations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/two-step-equations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/inequalities.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/proportional-relationships.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/percent-applications.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/circles-area-circumference.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-oop.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/surface-area.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-exceptions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/probability-simple.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/sampling-distributions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-database.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade7/linear-relationships-intro.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-winforms.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/multi-step-equations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-threads.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/functions-graphs.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/vbnet/vb-async.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/pythagorean-theorem.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/introduction.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/exponents.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/elements.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/scientific-notation.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/formsandinputs.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/transformations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/tables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/volume-cones-spheres-cylinders.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/navigation.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/probability-compound.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/images.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade8/intro-quadratics.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/meta.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/expressions-polynomials.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/formsandvalidation.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/factoring-quadratics.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/html5.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/solving-quadratics.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/canvas.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/systems-linear.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/bestpractices.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/functions-relations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/access.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/graphing-linear-quadratic.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/html/embedding.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/exponential-functions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/intro-to-css.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/radicals-rational.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/selectors.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/inequalities-absolute.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/box-model.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade9/applications-modeling.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/flexbox.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/points-lines-planes.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/css-positioning.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/congruence-transformations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/css-animation.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/proofs-two-column.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/responsive-design.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/similar-triangles.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/css-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/right-triangles-trig.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/css-framework.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/circles.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/css-darkmode.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/volume-surface-area.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/css/css-practices.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/coordinate-geometry.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/introtojs.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/geometric-probability.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/variabletypes.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade10/constructions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/function.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/complex-numbers.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/eventlisteners.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/polynomial-functions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/dom.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/rational-functions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/exponential-logarithmic.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/sequences-series.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/asyncawait.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/probability-statistics.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/fetchapi.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/trig-ratios-graphs.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/es6.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/law-of-sines-cosines.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/js/debugging.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/transformations-of-functions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade11/intro-limits.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/trig-identities.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/inverse-trig.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/polar-coordinates.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/parametric-equations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/vectors-intro.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/derivatives-basics.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-oop.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/applications-derivatives.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/integrals-basics.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-database.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/area-under-curve.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-wpf.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/grade12/intro-differential-equations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-threads.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/counting-10.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/csharp/csharp-async.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/counting-20.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/games/blockturtlecode.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/shapes-colors.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/games/3d.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/comparing-sizes.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/submit-game.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/simple-patterns.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/alge-blast.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/intro-zero.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/suburb-sleuth.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/skip-count-2s.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/pi-fighter.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/days-of-week.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/geometry-galaxy.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/picture-addition.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/angle-assult.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/k/sorting-objects.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/function-frenzy.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/countingnumbers.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/factor-forest.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/addandsubtract.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/slice-master.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/multiplyanddivide.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/variable-vault.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/fractionanddecimals.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/sum-city.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/basicgeometry.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/prime-time.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/moneysort.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/multiplication-mayhem.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/basicalgebra.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/subtract-squad.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/coords.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/assets/addventure-island/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/stats.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/assets/infinity-island/</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/wordproblems.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/assets/house-explorer/index.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/patternsequ.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/assets/hike-adventure/</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/exponents.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/polygon-panic.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/ratios.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/games/chromedino.html</loc>
-  <lastmod>2025-06-25T00:08:18+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/proportions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/assets/eaglercraft/</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/angles.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/search/</loc>
-  <lastmod>2025-05-10T13:26:38+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/perimiter.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/audio.html</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/volumesurface.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/index.html</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/graphequations.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/programs/</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/bin/linearfunctions.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/images/</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://www.houselearning.org/home/math/games/mathmaze.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/math/games/fractionfrenzy.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/math/games/shapesort.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/math/games/mathmemory.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/math/games/timetravel.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/math/games/equationescape.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/math/games/graphgenius.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-lists.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/math/games/moneymadness.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-dictionaries.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/vbnet/</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/github/</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-exceptions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/python/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-oop.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/java/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-async.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/ruby/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-gui.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/swift/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/python/py-projects.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/kotlin/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/go/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/php/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/typescript/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/r/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/sql/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-methods.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/dart/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/matlab/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-oop.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/bash/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-exceptions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/perl/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-gui.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/cpp/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-projects.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/json/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-generics.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/powershell/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-collections.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/shell/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-streams.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/assembly/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-concurrency.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/yaml/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/java/java-networking.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/markdown/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/bootstrap/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/tailwind/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/tonejs/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/threejs/index.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/games/blockturtlecode.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-methods.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/games/fruitninja.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/games/3d.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-hashes.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/games/scratchjump.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/assets/local/appelv1.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-exceptions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/assets/local/minecraftv8.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-oop.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/assets/local/paperminecraftv11.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-modules.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/computerscience/submit-game.html</loc>
+	<lastmod>2025-12-23T20:28:37+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/ruby/ruby-gems.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/k/five-senses.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/k/seasons-weather.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/k/animal-homes.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/k/parts-of-plant.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/k/living-nonliving.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade1/states-of-matter.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade1/body-parts.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade1/day-night-sky.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-dictionaries.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade1/simple-machines.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade1/animal-habitats.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-errors.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade2/plant-life-cycles.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-oop.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade2/water-cycle.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-protocols.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade2/food-chains.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-concurrency.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade2/magnets-force.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/swift/swift-projects.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade2/weather-climate.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade3/ecosystems.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade3/force-motion.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade3/earths-layers.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade3/solar-system.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade3/simple-circuits.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade4/body-systems.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade4/plant-adaptations.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-collections.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade4/sound-light.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade4/rocks-minerals.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-exceptions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade4/weathering-erosion.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-oop.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade5/intro-to-cells.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-coroutines.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade5/photosynthesis.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/kotlin/kotlin-projects.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade5/properties-of-matter.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade5/gravity-space.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade5/earths-biomes.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade6/atoms-molecules.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade6/chemical-reactions.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade6/cell-structure.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade6/genetics-intro.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade7/periodic-table.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-maps.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade7/newtons-laws.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade7/digestive-system.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-concurrency.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade7/circulatory-system.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/go/go-projects.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade7/microorganisms.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade8/acids-bases.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade8/work-power-energy.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade8/evolution-adaptation.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade8/earths-climate.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade8/ecology-basics.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade9/cellular-respiration.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-arrays.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade9/dna-rna.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-oop.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade9/mendelian-genetics.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade9/taxonomy-classification.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-exceptions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade9/human-anatomy.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-html-integration.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade10/chemical-bonding.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-sessions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade10/stoichiometry.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-database.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade10/chemical-reactions.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-security.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade10/gases-laws.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-apis.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade10/acids-bases-salts.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-composer.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade11/kinematics.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/php/php-projects.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade11/newtons-laws-motion.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade11/waves-sound.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade11/electricity-magnetism.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade11/thermodynamics.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade12/earths-systems.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-interfaces.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade12/hydrology-oceanography.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-classes.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade12/ecology-biomes.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-modules.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade12/environmental-issues.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-generics.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/grade12/astronomy.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-enums.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/ecosystems.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-typeguards.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/forcesandmotion.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-decorators.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/statesofmatter.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-tooling.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/electricity.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-react.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/photosynthesis.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-node.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/animalsandadaptations.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/typescript/ts-projects.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/solarsystem.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/humanbody.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-syntax.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/weather.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-variables.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/rocksandminerals.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-conditions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/soundwaves.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-loops.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/bin/lightandoptics.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-functions.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/ecoexplorer.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-dataframes.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/gravityjump.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-vectors.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/energyquest.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-plots.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/animalkingdom.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-statistics.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/spaceexplorer.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-packages.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/bodysystems.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-ggplot2.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/weatherwizard.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-string-manipulation.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/rockhunter.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-fileio.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/science/games/lightlab.html</loc>
+	<lastmod>2025-12-23T20:28:38+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-api-calls.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/apply/</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/r/r-projects.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/general/beans101.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/sql/sql-intro.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/general/houselearning-app.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/example.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/math/best-tools.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/about.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/motivation/how-to-stay-motivated.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/whitenights0000dost.pdf</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/general/language-learning.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/01_The_Lightning_Thief.pdf</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/motivation/how-to-turn.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/1</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/studytips/index.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/2</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/math/index.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/3</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/science/index.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/4</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/motivation/index.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/5</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/blog/kids/index.html</loc>
+	<lastmod>2025-12-23T20:28:39+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/6</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/index.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/7</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/about.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/8</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/alge-blast.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/9</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/suburb-sleuth.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/11</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/pi-fighter.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/12</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/geometry-galaxy.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/15</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/angle-assult.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/16</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/function-frenzy.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/17</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/statistics.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/18</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/factor-forest.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/19</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/slice-master.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/20</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/variable-vault.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/21</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/sum-city.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/22</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/prime-time.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/23</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/division-dominon.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/24</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/multiplication-mayhem.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/26</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/assets/addventure-island/index.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/27</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/mathmage.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/books/28</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/pattern-planet</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/safe-library/images/animations/</loc>
-  <lastmod>2025-06-15T13:32:43+00:00</lastmod>
-  <priority>0.41</priority>
+	<loc>https://www.houselearning.org/home/games/integral-invasion.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://houselearning.org/home/computerscience/index.html</loc>
-  <lastmod>2025-06-25T00:08:19+00:00</lastmod>
-  <priority>0.33</priority>
+	<loc>https://www.houselearning.org/home/assets/bouncy-turt/index.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
-
-
-
+<url>
+	<loc>https://www.houselearning.org/home/games/circle-of-chaos.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.houselearning.org/home/games/logic-lab.html</loc>
+	<lastmod>2025-12-23T20:28:40+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
 </urlset>
