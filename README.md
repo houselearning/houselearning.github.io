@@ -25,7 +25,7 @@
 
   <h2>📸 Screenshots</h2>
   <p>Here’s a preview of the HouseLearning Home website (subject to change):</p>
-  <img src="https://houselearning.github.io/home/readme/screenshot.png" alt="HouseLearning Home Screenshot">
+  <img src="https://houselearning.org/home/readme/screenshot.png" alt="HouseLearning Home Screenshot">
 
   <h2>🚀 Getting Started</h2>
 
