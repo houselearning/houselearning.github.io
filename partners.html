@@ -10,21 +10,20 @@
 <link rel="stylesheet" href="https://houselearning.org/style.css">
 
 <style>
-  body { background: #FAFAFA; color: #222; font-family: Arial, sans-serif; }
-  nav.navbar { background: #1A73E8; padding: 12px; }
-  nav.navbar .navbar-content a { color: white; margin-right: 16px; text-decoration: none; font-weight: 500; }
-  .container { max-width: 600px; margin: 40px auto; padding: 0 20px; }
-  .card { background: #fff; border-radius: 8px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-  .dropzone { border: 2px dashed #777; border-radius: 6px; padding: 30px; text-align: center; margin-bottom: 16px; cursor: pointer; transition: background 0.2s ease; color: #555; }
-  .dropzone.highlight { background: #f1f1f1; border-color: #1A73E8; }
-  .dropzone input { display: none; }
-  .progress-bar-bg { width: 100%; background: #e0e0e0; border-radius: 6px; overflow: hidden; margin-top: 14px; height: 18px; }
-  .progress-bar-fill { height: 100%; width: 0%; background: #1A73E8; transition: width 0.3s ease; }
-  .message { margin-top: 14px; font-size: 15px; }
-  .success { color: #206520; }
-  .error { color: #8B0000; }
+body { background: #FAFAFA; color: #222; font-family: Arial, sans-serif; }
+nav.navbar { background: #1A73E8; padding: 12px; }
+nav.navbar .navbar-content a { color: white; margin-right: 16px; text-decoration: none; font-weight: 500; }
+.container { max-width: 600px; margin: 40px auto; padding: 0 20px; }
+.card { background: #fff; border-radius: 8px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.dropzone { border: 2px dashed #777; border-radius: 6px; padding: 30px; text-align: center; margin-bottom: 16px; cursor: pointer; transition: background 0.2s ease; color: #555; }
+.dropzone.highlight { background: #f1f1f1; border-color: #1A73E8; }
+.dropzone input { display: none; }
+.progress-bar-bg { width: 100%; background: #e0e0e0; border-radius: 6px; overflow: hidden; margin-top: 14px; height: 18px; }
+.progress-bar-fill { height: 100%; width: 0%; background: #1A73E8; transition: width 0.3s ease; }
+.message { margin-top: 14px; font-size: 15px; }
+.success { color: #206520; }
+.error { color: #8B0000; }
 </style>
-
 </head>
 <body>
 
@@ -39,9 +38,7 @@
 
 <main class="container">
   <div class="card">
-
     <h2>Upload Your Partnership PDF</h2>
-
     <div id="dropzone" class="dropzone">
       Drag & Drop PDF here<br>or Click to Browse
       <input type="file" id="fileInput" accept="application/pdf">
@@ -53,15 +50,13 @@
 
     <div id="status" class="message"></div>
 
-    <!-- reCAPTCHA -->
     <div class="g-recaptcha" data-sitekey="6LeNBUwsAAAAAMwDhp2LCD6iy_uDg0exFUxqNfFi"></div>
-
   </div>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 <script>
-  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
 </script>
 
 <script type="module">
@@ -92,7 +87,7 @@ function resetProgress() { updateProgress(0); }
 async function handleFile(file) {
   statusEl.textContent = ""; resetProgress();
 
-  // CAPTCHA check
+  // CAPTCHA validation
   const captchaResponse = grecaptcha.getResponse();
   if (!captchaResponse) {
     statusEl.textContent = "Please complete the CAPTCHA.";
@@ -107,10 +102,9 @@ async function handleFile(file) {
   }
 
   const reader = new FileReader();
+
   reader.onprogress = (e) => {
-    if (e.lengthComputable) {
-      updateProgress((e.loaded / e.total) * 50); // reading ~50%
-    }
+    if (e.lengthComputable) updateProgress((e.loaded / e.total) * 30); // reading ~30%
   };
 
   reader.onloadstart = () => { statusEl.textContent = "Reading PDF…"; };
@@ -120,34 +114,44 @@ async function handleFile(file) {
       const arrayBuffer = reader.result;
       const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
 
-      let found = false;
-      const maxPages = 1; // only first page
-      for (let i = 1; i <= maxPages; i++) {
+      let markdownContent = "";
+      const totalPages = pdf.numPages;
+
+      for (let i = 1; i <= totalPages; i++) {
         const page = await pdf.getPage(i);
         const content = await page.getTextContent();
-        const text = content.items.map(i => i.str).join(" ");
-        updateProgress(50 + (i / maxPages) * 50); // remaining 50%
-        if (text.includes("35105")) { found = true; break; }
+        const textItems = content.items.map(item => item.str);
+
+        // Simple Markdown conversion
+        textItems.forEach(line => {
+          if (line.trim().endsWith(":")) markdownContent += `## ${line.trim()}\n`;
+          else markdownContent += `${line.trim()}\n`;
+        });
+
+        updateProgress(30 + (i / totalPages) * 70); // scanning 70%
       }
 
-      if (!found) {
+      // Check for verification code
+      if (!markdownContent.includes("35105")) {
         statusEl.textContent = "Verification code not found in PDF.";
         statusEl.className = "message error";
         resetProgress();
         return;
       }
 
+      // Save to Firestore
       await addDoc(collection(db, "partner-deals"), {
         fileName: file.name,
         verified: true,
         captchaToken: captchaResponse,
+        markdownContent: markdownContent,
         submittedAt: serverTimestamp()
       });
 
       updateProgress(100);
-      statusEl.textContent = "Uploaded! We’ll review within 2–3 days.";
+      statusEl.textContent = "Uploaded! We'll review within 2–3 days.";
       statusEl.className = "message success";
-      grecaptcha.reset(); // reset CAPTCHA
+      grecaptcha.reset();
 
     } catch (err) {
       statusEl.textContent = "Error processing PDF: " + err;
@@ -159,7 +163,7 @@ async function handleFile(file) {
   reader.readAsArrayBuffer(file);
 }
 
-// Drag & drop handlers
+// Drag & drop
 dropzone.addEventListener("dragover", (e) => { e.preventDefault(); dropzone.classList.add("highlight"); });
 dropzone.addEventListener("dragleave", () => { dropzone.classList.remove("highlight"); });
 dropzone.addEventListener("drop", (e) => { e.preventDefault(); dropzone.classList.remove("highlight"); handleFile(e.dataTransfer.files[0]); });
@@ -168,6 +172,5 @@ dropzone.addEventListener("click", () => fileInput.click());
 fileInput.addEventListener("change", () => handleFile(fileInput.files[0]));
 
 </script>
-
 </body>
 </html>
