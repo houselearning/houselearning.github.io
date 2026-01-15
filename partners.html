@@ -49,7 +49,6 @@ nav.navbar .navbar-content a { color: white; margin-right: 16px; text-decoration
     </div>
 
     <div id="status" class="message"></div>
-
     <div class="g-recaptcha" data-sitekey="6LeNBUwsAAAAAMwDhp2LCD6iy_uDg0exFUxqNfFi"></div>
   </div>
 </main>
@@ -104,7 +103,7 @@ async function handleFile(file) {
   const reader = new FileReader();
 
   reader.onprogress = (e) => {
-    if (e.lengthComputable) updateProgress((e.loaded / e.total) * 30); // reading ~30%
+    if (e.lengthComputable) updateProgress((e.loaded / e.total) * 20); // reading ~20%
   };
 
   reader.onloadstart = () => { statusEl.textContent = "Reading PDF…"; };
@@ -113,22 +112,36 @@ async function handleFile(file) {
     try {
       const arrayBuffer = reader.result;
       const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-
       let markdownContent = "";
+      let slides = [];
+
       const totalPages = pdf.numPages;
+      const maxSlides = 2; // first 2 slides only
 
       for (let i = 1; i <= totalPages; i++) {
         const page = await pdf.getPage(i);
+
+        // Extract text for Markdown
         const content = await page.getTextContent();
         const textItems = content.items.map(item => item.str);
-
-        // Simple Markdown conversion
         textItems.forEach(line => {
           if (line.trim().endsWith(":")) markdownContent += `## ${line.trim()}\n`;
           else markdownContent += `${line.trim()}\n`;
         });
 
-        updateProgress(30 + (i / totalPages) * 70); // scanning 70%
+        // Convert first 2 slides to images
+        if (i <= maxSlides) {
+          const viewport = page.getViewport({ scale: 2 });
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          await page.render({ canvasContext: context, viewport }).promise;
+          const base64Image = canvas.toDataURL("image/png");
+          slides.push(base64Image);
+        }
+
+        updateProgress(20 + (i / totalPages) * 80); // scanning ~80%
       }
 
       // Check for verification code
@@ -145,6 +158,7 @@ async function handleFile(file) {
         verified: true,
         captchaToken: captchaResponse,
         markdownContent: markdownContent,
+        slides: slides,
         submittedAt: serverTimestamp()
       });
 
