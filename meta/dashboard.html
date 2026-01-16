@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houselearning Staff Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .user-card.selected { border-color: #3b82f6; background-color: #eff6ff; }
+        /* Spinner loading style */
+        .loader { border-top-color: #3498db; -webkit-animation: spinner 1.5s linear infinite; animation: spinner 1.5s linear infinite; }
+        @-webkit-keyframes spinner { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
+        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans">
+
+    <div id="auth-gate" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50" style="display: none;">
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+            <h2 class="text-xl font-bold mb-4">Staff Access Only</h2>
+            <p class="mb-6 text-gray-600">Please sign in to access the dashboard.</p>
+            <button id="staff-login-btn" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 font-bold w-full">Sign In</button>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+        <header class="mb-8 flex justify-between items-center">
+            <div>
+                 <h1 class="text-3xl font-extrabold text-gray-800">🏠 Houselearning <span class="text-blue-600">Staff</span></h1>
+                 <p class="text-gray-500">Notification Center</p>
+            </div>
+            <div id="staff-profile" class="hidden items-center space-x-3 bg-white p-2 rounded-full shadow">
+                <img id="staff-img" src="" class="w-8 h-8 rounded-full border-2 border-blue-500">
+                <span id="staff-name" class="font-semibold text-gray-700 pr-2"></span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1 bg-white p-6 rounded-xl shadow-md h-[80vh] flex flex-col">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 flex justify-between items-center">
+                    Select Recipient
+                    <span id="user-count" class="text-sm bg-gray-200 text-gray-600 py-1 px-2 rounded-full">0 users</span>
+                </h2>
+                
+                <div class="mb-4 relative">
+                    <input type="text" id="user-search" placeholder="Search by name..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <svg class="w-5 h-5 text-gray-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+
+                <div id="user-list-container" class="flex-1 overflow-y-auto space-y-2 pr-2 relative">
+                     <div id="users-loading" class="absolute inset-0 flex justify-center items-center bg-white bg-opacity-80 z-10">
+                        <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
+                <h2 class="text-xl font-bold mb-6 text-gray-800">Compose Notification</h2>
+
+                <div id="selected-user-banner" class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 hidden align-middle">
+                    <div class="flex items-center">
+                        <img id="selected-img" src="" class="w-10 h-10 rounded-full mr-3 border border-blue-300">
+                        <div>
+                            <p class="text-sm text-blue-800 font-bold">Sending to:</p>
+                            <p id="selected-name" class="font-semibold text-gray-800 text-lg"></p>
+                            <p id="selected-uid" class="text-xs text-gray-500 font-mono"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="notif-form" class="space-y-5">
+                    <input type="hidden" id="recipient-uid">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Notification Title *</label>
+                        <input type="text" id="notif-title" required placeholder="e.g., Homework Alert!" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Message Body</label>
+                        <textarea id="notif-body" rows="4" placeholder="Enter the details here..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Action URL (Optional)</label>
+                        <div class="flex">
+                            <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">https://</span>
+                            <input type="text" id="notif-url" placeholder="houselearning.org/assignment/123" class="flex-1 p-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">If provided, a button will appear in the notification.</p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" id="send-btn" disabled class="w-full bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 rounded-lg transition duration-200 ease-in-out flex justify-center items-center cursor-not-allowed">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                            Send Notification
+                        </button>
+                    </div>
+                </form>
+                 <div id="form-feedback" class="mt-4 text-center hidden font-medium"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getFirestore, collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // --- CONFIGURATION ---
+        // Use the EXACT SAME config from your main.js
+        const firebaseConfig = {
+            apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
+            authDomain: "contract-center-llc-10.firebaseapp.com",
+            projectId: "contract-center-llc-10",
+            storageBucket: "contract-center-llc-10.firebasestorage.app",
+            messagingSenderId: "323221512767",
+            appId: "1:323221512767:web:6421260f875997dbf64e8a",
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const defaultPfp = 'https://houselearning.org/auth/dashboard/default.png';
+
+        // --- DOM ELEMENTS ---
+        const authGate = document.getElementById('auth-gate');
+        const staffLoginBtn = document.getElementById('staff-login-btn');
+        const staffProfile = document.getElementById('staff-profile');
+        const userListContainer = document.getElementById('user-list-container');
+        const usersLoading = document.getElementById('users-loading');
+        const userCountLabel = document.getElementById('user-count');
+        const userSearchInput = document.getElementById('user-search');
+        const selectedUserBanner = document.getElementById('selected-user-banner');
+        const notifForm = document.getElementById('notif-form');
+        const sendBtn = document.getElementById('send-btn');
+        const formFeedback = document.getElementById('form-feedback');
+
+        let allUsersData = []; // Store fetched users locally for filtering
+        let currentUser = null; // The logged-in staff member
+
+        // --- AUTHENTICATION HANDLING ---
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in.
+                currentUser = user;
+                authGate.style.display = 'none';
+                staffProfile.style.display = 'inline-flex';
+                document.getElementById('staff-img').src = user.photoURL || defaultPfp;
+                document.getElementById('staff-name').textContent = user.displayName || 'Staff';
+                fetchUsers(); // Load users once authenticated
+            } else {
+                // No user is signed in.
+                currentUser = null;
+                authGate.style.display = 'flex';
+                staffProfile.style.display = 'none';
+            }
+        });
+
+        staffLoginBtn.addEventListener('click', () => {
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(auth, provider).catch((error) => {
+                console.error("Login failed:", error);
+                alert("Login failed: " + error.message);
+            });
+        });
+
+        // --- 1. FETCH USERS FUNCTION ---
+        // CRITICAL: This depends on a Firestore collection named 'users' existing.
+        async function fetchUsers() {
+            usersLoading.style.display = 'flex';
+            userListContainer.innerHTML = usersLoading.outerHTML; // Keep loader, clear rest
+
+            try {
+                const querySnapshot = await getDocs(collection(db, "users"));
+                allUsersData = [];
+                querySnapshot.forEach((doc) => {
+                    // Assumes document ID is UID, data has displayName and photoURL
+                    allUsersData.push({
+                        uid: doc.id,
+                        ...doc.data()
+                    });
+                });
+                
+                userCountLabel.textContent = `${allUsersData.length} users`;
+                renderUserList(allUsersData);
+
+            } catch (error) {
+                console.error("Error fetching users:", error);
+                 userListContainer.innerHTML = `<div class="text-red-500 p-4 text-center">Error loading users. Ensure the 'users' Firestore collection exists and is readable. <br><small>${error.message}</small></div>`;
+            } finally {
+                 if(document.getElementById('users-loading')) {
+                     document.getElementById('users-loading').style.display = 'none';
+                 }
+            }
+        }
+
+        // --- RENDER USER LIST & SELECTION LOGIC ---
+        function renderUserList(usersToRender) {
+            // Clear list except loader
+            Array.from(userListContainer.children).forEach(child => {
+                if (child.id !== 'users-loading') child.remove();
+            });
+
+            if (usersToRender.length === 0) {
+                userListContainer.innerHTML += `<div class="text-gray-500 text-center p-4">No users found.</div>`;
+                return;
+            }
+
+            usersToRender.forEach(userData => {
+                const pfpSrc = userData.photoURL || defaultPfp;
+                const displayName = userData.displayName || userData.email || "Unknown User";
+                
+                const card = document.createElement('div');
+                card.className = `user-card flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition duration-150`;
+                card.dataset.uid = userData.uid;
+                card.innerHTML = `
+                    <img src="${pfpSrc}" alt="${displayName}" class="w-10 h-10 rounded-full object-cover border border-gray-300 mr-3">
+                    <div class="overflow-hidden">
+                        <h4 class="font-semibold text-gray-800 truncate">${displayName}</h4>
+                        <p class="text-xs text-gray-400 font-mono truncate">${userData.uid}</p>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => selectUser(userData.uid, displayName, pfpSrc));
+                userListContainer.appendChild(card);
+            });
+        }
+
+        // Filter users input handler
+        userSearchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = allUsersData.filter(user => {
+                const name = (user.displayName || '').toLowerCase();
+                return name.includes(searchTerm);
+            });
+             renderUserList(filtered);
+        });
+
+
+        function selectUser(uid, name, pfp) {
+            // Highlight selected card
+            document.querySelectorAll('.user-card').forEach(c => c.classList.remove('selected'));
+            const selectedCard = userListContainer.querySelector(`[data-uid="${uid}"]`);
+            if(selectedCard) selectedCard.classList.add('selected');
+
+            // Update form hidden input and banner
+            document.getElementById('recipient-uid').value = uid;
+            
+            document.getElementById('selected-img').src = pfp;
+            document.getElementById('selected-name').textContent = name;
+            document.getElementById('selected-uid').textContent = `UUID: ${uid}`;
+            selectedUserBanner.style.display = 'block';
+
+            // Enable submit button
+            sendBtn.disabled = false;
+            sendBtn.classList.remove('bg-gray-400', 'cursor-not-allowed');
+            sendBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+        }
+
+
+        // --- 2. SEND NOTIFICATION FUNCTION ---
+        notifForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!currentUser) {
+                alert("You must be logged in to send.");
+                return;
+            }
+
+            const recipientUid = document.getElementById('recipient-uid').value;
+            const title = document.getElementById('notif-title').value;
+            const body = document.getElementById('notif-body').value;
+            let urlVal = document.getElementById('notif-url').value;
+
+            if (!recipientUid) {
+                showFeedback("Please select a user first.", "text-red-600");
+                return;
+            }
+            
+             // Prepend https:// if user added a URL but forgot protocol
+            let finalUrl = null;
+            if (urlVal.trim() !== '') {
+                finalUrl = urlVal.startsWith('http') ? urlVal : `https://${urlVal}`;
+            }
+
+            // UI Loading state
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = `<svg class="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...`;
+            showFeedback("");
+
+            try {
+                // --- THE CORE ACTION: Add document to 'notifications' collection ---
+                const notifData = {
+                    recipientUid: recipientUid,
+                    title: title,
+                    body: body,
+                    url: finalUrl,
+                    timestamp: serverTimestamp(), // Use server time for consistency
+                    read: false,
+                    senderUid: currentUser.uid // Optional: track who sent it
+                };
+
+                await addDoc(collection(db, "notifications"), notifData);
+
+                // Success UI
+                showFeedback("✅ Notification sent successfully!", "text-green-600");
+                notifForm.reset();
+                selectedUserBanner.style.display = 'none';
+                document.getElementById('recipient-uid').value = '';
+                 document.querySelectorAll('.user-card').forEach(c => c.classList.remove('selected'));
+                 sendBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
+                 sendBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                 setTimeout(() => showFeedback(""), 3000);
+
+            } catch (error) {
+                console.error("Error sending notification:", error);
+                showFeedback("❌ Error sending: " + error.message, "text-red-600");
+            } finally {
+                if(document.getElementById('recipient-uid').value !== '') {
+                     sendBtn.disabled = false;
+                     sendBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg> Send Notification`;
+                }
+            }
+        });
+
+        function showFeedback(msg, classes) {
+            formFeedback.textContent = msg;
+            formFeedback.className = `mt-4 text-center font-medium ${classes}`;
+            formFeedback.style.display = msg ? 'block' : 'none';
+        }
+
+    </script>
+</body>
+</html>
