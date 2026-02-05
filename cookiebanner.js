@@ -1,6 +1,3 @@
-/* cookiebanner.js with Alt+C shortcut to open settings
-   Drop in /cookiebanner.js and include <script src="/cookiebanner.js" defer></scriept>
-*/
 
 (function () {
   var PRIVACY_URL = "/privacy.html";
