@@ -76,15 +76,15 @@
       getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup 
     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-    // TODO: Replace with your config
+    // Firebase config
     const firebaseConfig = {
-  apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
-  authDomain: "contract-center-llc-10.firebaseapp.com",
-  projectId: "contract-center-llc-10",
-  storageBucket: "contract-center-llc-10.firebasestorage.app",
-  messagingSenderId: "323221512767",
-  appId: "1:323221512767:web:6421260f875997dbf64e8a",
-  measurementId: "G-S2RJ0C6BWH"
+      apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
+      authDomain: "contract-center-llc-10.firebaseapp.com",
+      projectId: "contract-center-llc-10",
+      storageBucket: "contract-center-llc-10.firebasestorage.app",
+      messagingSenderId: "323221512767",
+      appId: "1:323221512767:web:6421260f875997dbf64e8a",
+      measurementId: "G-S2RJ0C6BWH"
     };
 
     const app = initializeApp(firebaseConfig);
@@ -99,17 +99,9 @@
     // Check dashboard access
     async function verifyDashboardAccess(user) {
       try {
-        // This doc is protected by canAccessDashboard()
         const testDoc = await getDoc(doc(db, "dashboard", "accessCheck"));
-
-        if (!testDoc.exists()) {
-          // If the doc doesn't exist, rules still allowed the read → OK
-          return true;
-        }
-
-        return true;
+        return true; // If read succeeds, access is allowed
       } catch (err) {
-        // Permission denied → redirect
         redirectToAuth();
         return false;
       }
@@ -155,6 +147,10 @@
         status.textContent = "Error: " + err.message;
       }
     }
+
+    // ⭐ FIX: expose function globally for inline onclick
+    window.sendNotification = sendNotification;
+
   </script>
 
 </body>
