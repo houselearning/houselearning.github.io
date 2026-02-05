@@ -1,138 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Houselearning Staff Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .user-card.selected { border-color: #3b82f6; background-color: #eff6ff; }
-        .loader { border-top-color: #3498db; animation: spinner 1.5s linear infinite; }
-        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    </style>
+  <meta charset="UTF-8">
+  <title>HouseLearning Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    button {
+      background: #0066ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background: #0052cc;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <div id="auth-gate" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50" style="display: none;">
-        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-            <h2 class="text-xl font-bold mb-4">Staff Access Only</h2>
-            <button id="staff-login-btn" class="bg-blue-600 text-white px-6 py-2 rounded font-bold">Sign In</button>
-        </div>
-    </div>
+<body>
 
-    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
-        <header class="mb-8 flex justify-between items-center">
-            <h1 class="text-3xl font-extrabold text-gray-800">🏠 Staff <span class="text-blue-600">Notification Center</span></h1>
-            <div id="staff-profile" class="hidden items-center space-x-3 bg-white p-2 rounded-full shadow">
-                <img id="staff-img" src="" class="w-8 h-8 rounded-full">
-                <span id="staff-name" class="font-semibold text-gray-700 pr-2"></span>
-            </div>
-        </header>
+  <h1>HouseLearning Dashboard</h1>
+  <p id="welcome"></p>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-1 bg-white p-6 rounded-xl shadow-md h-[80vh] flex flex-col">
-                <h2 class="text-xl font-bold mb-4 flex justify-between">Recipient <span id="user-count" class="text-sm bg-gray-200 py-1 px-2 rounded-full">0</span></h2>
-                <input type="text" id="user-search" placeholder="Search profiles..." class="w-full mb-4 p-2 border rounded-lg">
-                <div id="user-list-container" class="flex-1 overflow-y-auto space-y-2 relative">
-                    <div id="users-loading" class="absolute inset-0 flex justify-center items-center bg-white"><div class="loader rounded-full border-4 h-12 w-12"></div></div>
-                </div>
-            </div>
+  <!-- Notification Sender -->
+  <div class="card">
+    <h2>Send Notification</h2>
 
-            <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
-                <div id="selected-user-banner" class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 hidden">
-                    <div class="flex items-center">
-                        <img id="selected-img" src="" class="w-10 h-10 rounded-full mr-3">
-                        <p id="selected-name" class="font-bold text-lg"></p>
-                    </div>
-                </div>
-                
-                <form id="notif-form" class="space-y-5">
-                    <input type="hidden" id="recipient-uid">
-                    <input type="text" id="notif-title" required placeholder="Notification Title" class="w-full p-3 border rounded-lg">
-                    <textarea id="notif-body" rows="4" placeholder="Message Body" class="w-full p-3 border rounded-lg"></textarea>
-                    <input type="text" id="notif-url" placeholder="Action URL (Optional)" class="w-full p-3 border rounded-lg">
-                    <button type="submit" id="send-btn" disabled class="w-full bg-gray-400 text-white font-bold py-4 rounded-lg cursor-not-allowed">Send Notification</button>
-                </form>
-                <div id="form-feedback" class="mt-4 text-center hidden"></div>
-            </div>
-        </div>
-    </div>
+    <input id="uid" placeholder="Recipient Firebase UID">
+    <input id="subject" placeholder="Notification Subject">
+    <textarea id="body" placeholder="Notification Body"></textarea>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { getFirestore, collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    <button onclick="sendNotification()">Send Notification</button>
+    <p id="status"></p>
+  </div>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
-            authDomain: "contract-center-llc-10.firebaseapp.com",
-            projectId: "contract-center-llc-10",
-            storageBucket: "contract-center-llc-10.firebasestorage.app",
-            messagingSenderId: "323221512767",
-            appId: "1:323221512767:web:6421260f875997dbf64e8a",
-        };
+  <!-- Dashboard Content -->
+  <div class="card">
+    <h2>Dashboard Access Check</h2>
+    <p>If you can see this, you passed Firestore's canAccessDashboard() rule.</p>
+  </div>
 
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { 
+      getFirestore, doc, getDoc, collection, addDoc, serverTimestamp 
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { 
+      getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup 
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        onAuthStateChanged(auth, user => {
-            if (user) {
-                document.getElementById('auth-gate').style.display = 'none';
-                document.getElementById('staff-profile').classList.remove('hidden');
-                document.getElementById('staff-img').src = user.photoURL;
-                document.getElementById('staff-name').textContent = user.displayName;
-                fetchUsers();
-            } else {
-                document.getElementById('auth-gate').style.display = 'flex';
-            }
+    // TODO: Replace with your config
+    const firebaseConfig = {
+  apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
+  authDomain: "contract-center-llc-10.firebaseapp.com",
+  projectId: "contract-center-llc-10",
+  storageBucket: "contract-center-llc-10.firebasestorage.app",
+  messagingSenderId: "323221512767",
+  appId: "1:323221512767:web:6421260f875997dbf64e8a",
+  measurementId: "G-S2RJ0C6BWH"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    // Redirect helper
+    function redirectToAuth() {
+      window.location.href = "/auth";
+    }
+
+    // Check dashboard access
+    async function verifyDashboardAccess(user) {
+      try {
+        // This doc is protected by canAccessDashboard()
+        const testDoc = await getDoc(doc(db, "dashboard", "accessCheck"));
+
+        if (!testDoc.exists()) {
+          // If the doc doesn't exist, rules still allowed the read → OK
+          return true;
+        }
+
+        return true;
+      } catch (err) {
+        // Permission denied → redirect
+        redirectToAuth();
+        return false;
+      }
+    }
+
+    // Auth state
+    onAuthStateChanged(auth, async user => {
+      if (!user) {
+        const provider = new GoogleAuthProvider();
+        await signInWithPopup(auth, provider);
+        return;
+      }
+
+      document.getElementById("welcome").textContent =
+        "Logged in as: " + user.email;
+
+      await verifyDashboardAccess(user);
+    });
+
+    // Send notification
+    async function sendNotification() {
+      const uid = document.getElementById("uid").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const body = document.getElementById("body").value.trim();
+      const status = document.getElementById("status");
+
+      if (!uid || !subject || !body) {
+        status.textContent = "All fields are required.";
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "notifications"), {
+          recipientUid: uid,
+          title: subject,
+          body: body,
+          read: false,
+          timestamp: serverTimestamp()
         });
 
-        document.getElementById('staff-login-btn').onclick = () => signInWithPopup(auth, new GoogleAuthProvider());
+        status.textContent = "Notification sent!";
+      } catch (err) {
+        status.textContent = "Error: " + err.message;
+      }
+    }
+  </script>
 
-        async function fetchUsers() {
-            const querySnapshot = await getDocs(collection(db, "user_profiles"));
-            const users = [{ uid: "GLOBAL_ALL", displayName: "📣 EVERYONE (Broadcast)", photoURL: "https://img.icons8.com/fluency/96/conference-call.png" }];
-            querySnapshot.forEach(doc => users.push({ uid: doc.id, ...doc.data() }));
-            renderUserList(users);
-        }
-
-        function renderUserList(users) {
-            const container = document.getElementById('user-list-container');
-            document.getElementById('users-loading').style.display = 'none';
-            container.innerHTML = '';
-            users.forEach(u => {
-                const card = document.createElement('div');
-                card.className = "user-card flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50";
-                card.innerHTML = `<img src="${u.photoURL}" class="w-10 h-10 rounded-full mr-3"><div><h4 class="font-bold">${u.displayName}</h4></div>`;
-                card.onclick = () => {
-                    document.getElementById('recipient-uid').value = u.uid;
-                    document.getElementById('selected-name').textContent = u.displayName;
-                    document.getElementById('selected-img').src = u.photoURL;
-                    document.getElementById('selected-user-banner').classList.remove('hidden');
-                    document.getElementById('send-btn').disabled = false;
-                    document.getElementById('send-btn').className = "w-full bg-blue-600 text-white font-bold py-4 rounded-lg";
-                };
-                container.appendChild(card);
-            });
-        }
-
-        document.getElementById('notif-form').onsubmit = async (e) => {
-            e.preventDefault();
-            const btn = document.getElementById('send-btn');
-            btn.disabled = true;
-            try {
-                await addDoc(collection(db, "notifications"), {
-                    recipientUid: document.getElementById('recipient-uid').value,
-                    title: document.getElementById('notif-title').value,
-                    body: document.getElementById('notif-body').value,
-                    url: document.getElementById('notif-url').value,
-                    timestamp: serverTimestamp(),
-                    read: false
-                });
-                alert("Sent Successfully!");
-                location.reload();
-            } catch (err) { alert(err.message); btn.disabled = false; }
-        };
-    </script>
 </body>
 </html>
