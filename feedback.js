@@ -436,10 +436,34 @@
     } catch (e) { return false; }
   }
 
+  // Generate a cryptographically secure random string of the given length
+  function secureRandomString(length) {
+    const alphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
+    const alphabetLength = alphabet.length;
+    let result = "";
+    // Each byte from crypto.getRandomValues gives us a value 0-255.
+    // We map it into the alphabet range while avoiding modulo bias by discarding
+    // values that would make the distribution uneven.
+    const bytes = new Uint8Array(length * 2);
+    let i = 0;
+    while (result.length < length) {
+      window.crypto.getRandomValues(bytes);
+      while (i < bytes.length && result.length < length) {
+        const randomByte = bytes[i++];
+        // 36 * 7 = 252, so discard 252-255 to keep selection uniform
+        if (randomByte < alphabetLength * 7) {
+          result += alphabet.charAt(randomByte % alphabetLength);
+        }
+      }
+      i = 0;
+    }
+    return result;
+  }
+
   function getAnonId() {
     let id = localStorage.getItem(ANON_ID_KEY);
     if (!id) {
-      id = "anon-" + Math.random().toString(36).substring(2, 12);
+      id = "anon-" + secureRandomString(10);
       localStorage.setItem(ANON_ID_KEY, id);
     }
     return id;
