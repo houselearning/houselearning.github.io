@@ -134,6 +134,34 @@ nav a:hover {
     background: rgba(58, 134, 255, 0.05);
 }
 
+.nav-toggle.button {
+    display: none;
+}
+
+.nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.45);
+    backdrop-filter: blur(2px);
+    z-index: 50;
+}
+
+html.nav-open .nav-backdrop {
+    display: block;
+}
+
+html.nav-open,
+html.nav-open body {
+    overflow: hidden;
+}
+
+.nav-toggle::before {
+    content: "☰";
+    margin-right: 8px;
+    line-height: 1;
+}
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -433,6 +461,31 @@ footer {
 
     nav {
         display: none;
+        position: fixed;
+        top: 84px;
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        gap: 6px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        z-index: 60;
+    }
+
+    html.nav-open nav {
+        display: flex;
+    }
+
+    nav a.button {
+        width: 100%;
+    }
+
+    .nav-toggle.button {
+        display: inline-flex;
+        padding: 10px 14px;
     }
 
     /* Simplified for now, traditionally would be a hamburger */
