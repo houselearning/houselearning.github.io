@@ -2,58 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HouseLearning Home - Project Info</title>
   <script src="/feedback.js"></script>
-
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.7;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #111;
-    }
-    code {
-      background: #f4f4f4;
-      padding: 2px 4px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-    pre {
-      background: #f4f4f4;
-      padding: 10px;
-      overflow-x: auto;
-      border-radius: 4px;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    hr {
-      margin: 40px 0;
-      border: none;
-      border-top: 1px solid #ddd;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>HouseLearning Home</h1>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">HL</div>
+        <div>
+          <div style="font-weight:800">HouseLearning</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Learn anything — fast, free, focused</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="/home">Home</a>
+        <a href="https://houselearning.org/safe-library">SafeLibrary</a>
+        <a href="https://houselearning.org/home/about">About</a>
+        <a href="https://apply.houselearning.org">Apply</a>
+        <a href="https://github.com/houselearning">View on GitHub</a>
+        <a class="button btn-ghost" href="https://houselearning.org/auth/">Log in</a>
+        <a class="button btn-primary" href="https://houselearning.org/auth/">Sign up</a>
+      </nav>
+    </header>
+
+    <main class="card" style="max-width:900px;margin:20px auto 0">
+      <h1>HouseLearning Home</h1>
 
   <p>Welcome to <strong>HouseLearning Home</strong> — a fun and interactive learning game website designed to make education engaging through browser-based mini-games and activities. The platform offers a collection of educational games that help users practice and reinforce their skills while having fun.</p>
 
@@ -126,5 +104,20 @@
 
   <p><em>Made with ❤️ by HouseLearning</em></p>
 
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div style="font-weight:800">HouseLearning</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">© HouseLearning — free learning for curious people</div>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center">
+          <a href="https://houselearning.org/home/about">About</a>
+          <a href="https://github.com/houselearning/apply?tab=readme-ov-file#available-volunteer-jobs">Careers</a>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

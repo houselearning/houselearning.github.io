@@ -3,67 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <title>HouseLearning Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    main {
       max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 0 auto;
+      padding: 20px 0 40px;
     }
 
-    .card {
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 25px;
-    }
-
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    button {
-      background: #0066ff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 6px;
-    }
-
-    button:hover {
-      background: #0052cc;
+    .stack {
+      display: grid;
+      gap: 20px;
     }
 
     #status {
       margin-top: 10px;
-      font-weight: bold;
+      font-weight: 600;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
 
-  <h1>HouseLearning Dashboard</h1>
-  <p id="welcome"></p>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">HL</div>
+        <div>
+          <div style="font-weight:800">HouseLearning</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Learn anything — fast, free, focused</div>
+        </div>
+      </div>
 
-  <!-- Notification Sender -->
-  <div class="card">
-    <h2>Send Notification</h2>
+      <nav>
+        <a href="/home">Home</a>
+        <a href="https://houselearning.org/safe-library">SafeLibrary</a>
+        <a href="https://houselearning.org/home/about">About</a>
+        <a href="https://apply.houselearning.org">Apply</a>
+        <a href="https://github.com/houselearning">View on GitHub</a>
+        <a class="button btn-ghost" href="https://houselearning.org/auth/">Log in</a>
+        <a class="button btn-primary" href="https://houselearning.org/auth/">Sign up</a>
+      </nav>
+    </header>
 
-    <input id="uid" placeholder="Recipient Firebase UID">
-    <input id="subject" placeholder="Notification Subject">
-    <textarea id="body" placeholder="Notification Body"></textarea>
+    <main>
+      <h1>HouseLearning Dashboard</h1>
+      <p id="welcome"></p>
 
-    <button onclick="sendNotification()">Send Notification</button>
-    <p id="status"></p>
-  </div>
+      <div class="stack">
+        <!-- Notification Sender -->
+        <div class="card">
+          <h2>Send Notification</h2>
 
-  <!-- Dashboard Content -->
-  <div class="card">
-    <h2>Dashboard Access Check</h2>
-    <p>If you can see this, you passed Firestore's canAccessDashboard() rule.</p>
+          <input class="field" id="uid" placeholder="Recipient Firebase UID">
+          <input class="field" id="subject" placeholder="Notification Subject">
+          <textarea class="field" id="body" placeholder="Notification Body"></textarea>
+
+          <button class="button btn-primary" type="button" style="width:100%" onclick="sendNotification()">Send Notification</button>
+          <p id="status"></p>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="card">
+          <h2>Dashboard Access Check</h2>
+          <p>If you can see this, you passed Firestore's canAccessDashboard() rule.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div style="font-weight:800">HouseLearning</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">© HouseLearning — free learning for curious people</div>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center">
+          <a href="https://houselearning.org/home/about">About</a>
+          <a href="https://github.com/houselearning/apply?tab=readme-ov-file#available-volunteer-jobs">Careers</a>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <!-- Firebase SDK -->

@@ -6,23 +6,34 @@
 <title>Privacy Policy | HouseLearning</title>
 <script src="https://houselearning.org/cookiebanner.js"></script>
 <script src="/feedback.js"></script>
-<style>
-body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#f7fbff; color:#071021; margin:0; padding:0;}
-.container { max-width:800px; margin:50px auto; padding:20px; background:#fff; border-radius:12px; box-shadow:0 8px 30px rgba(2,6,23,0.05);}
-h1,h2,h3 { color:#071021; }
-p { line-height:1.6; }
-a { color:#1d4ed8; text-decoration:underline; }
-ul { padding-left:20px; }
-button { padding:10px 18px; border:none; border-radius:6px; cursor:pointer; margin-top:10px; font-weight: 500;}
-#manageCookiesBtn { background:#1d4ed8; color:#fff; transition: background 0.2s; }
-#manageCookiesBtn:hover { background:#2563eb; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
+  <header>
+    <div class="brand">
+      <div class="logo">HL</div>
+      <div>
+        <div style="font-weight:800">HouseLearning</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Learn anything — fast, free, focused</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="/home">Home</a>
+      <a href="https://houselearning.org/safe-library">SafeLibrary</a>
+      <a href="https://houselearning.org/home/about">About</a>
+      <a href="https://apply.houselearning.org">Apply</a>
+      <a href="https://github.com/houselearning">View on GitHub</a>
+      <a class="button btn-ghost" href="https://houselearning.org/auth/">Log in</a>
+      <a class="button btn-primary" href="https://houselearning.org/auth/">Sign up</a>
+    </nav>
+  </header>
+
+  <main class="card" style="max-width:800px;margin:20px auto 0">
   <h1>Privacy Policy for HouseLearning</h1>
   <p>Last updated: **December 13, 2025**</p>
-<iframe width="859" height="439" src="https://www.youtube.com/embed/69sjr6ERbeA" title="HouseLearning Privacy Policy Video 2:44" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="439" src="https://www.youtube.com/embed/69sjr6ERbeA" title="HouseLearning Privacy Policy Video 2:44" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <p>This Privacy Policy describes how HouseLearning ("we," "us," or "our") collects, uses, and discloses information when you use our website, services, and products (the "Service"). By using the Service, you agree to the collection and use of information in accordance with this policy.</p>
 
   <hr style="border:0; border-top:1px solid #eee; margin:30px 0;">
@@ -124,7 +135,21 @@ button { padding:10px 18px; border:none; border-radius:6px; cursor:pointer; marg
     <li>By visiting our privacy support page: <a href="https://bit.ly/46zNn7t" target="_blank">HouseLearning Privacy Support</a></li>
   </ul>
 
-  <button id="manageCookiesBtn">Manage Cookie Preferences</button>
+  <button id="manageCookiesBtn" class="button btn-primary" type="button">Manage Cookie Preferences</button>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div style="font-weight:800">HouseLearning</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px">© HouseLearning — free learning for curious people</div>
+      </div>
+      <div style="display:flex;gap:18px;align-items:center">
+        <a href="https://houselearning.org/home/about">About</a>
+        <a href="https://github.com/houselearning/apply?tab=readme-ov-file#available-volunteer-jobs">Careers</a>
+      </div>
+    </div>
+  </footer>
 </div>
 <script>
 // Open cookie settings
