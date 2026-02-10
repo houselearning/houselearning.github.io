@@ -169,6 +169,33 @@ nav a:hover {
     border-color: rgba(0, 0, 0, 0.2);
 }
 
+/* Forms */
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.field {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: white;
+    box-shadow: var(--shadow-sm);
+    color: var(--dark);
+}
+
+.field:focus {
+    outline: 2px solid rgba(58, 134, 255, 0.25);
+    border-color: rgba(58, 134, 255, 0.45);
+}
+
+textarea.field {
+    min-height: 120px;
+    resize: vertical;
+}
+
 /* Hero Section */
 .hero {
     display: grid;
