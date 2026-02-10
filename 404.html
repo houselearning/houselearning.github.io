@@ -5,6 +5,7 @@
   <!-- Google tag (gtag.js) -->
 <script src="https://houselearning.org/cookiebanner.js"></script>
 <script src="/feedback.js"></script>
+<script src="nav.js" defer></script>
 
   <meta charset="UTF-8">
   <title>404 Not Found | HouseLearning</title>
@@ -56,7 +57,7 @@
         </div>
       </div>
 
-      <nav>
+      <nav id="site-nav">
         <a href="/home">Home</a>
         <a href="https://houselearning.org/safe-library">SafeLibrary</a>
         <a href="https://houselearning.org/home/about">About</a>
@@ -65,6 +66,8 @@
         <a class="button btn-ghost" href="https://houselearning.org/auth/">Log in</a>
         <a class="button btn-primary" href="https://houselearning.org/auth/">Sign up</a>
       </nav>
+      <button class="nav-toggle button btn-ghost" type="button" aria-label="Open menu" aria-controls="site-nav"
+        aria-expanded="false">Menu</button>
     </header>
 
     <main class="notfound">
