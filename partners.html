@@ -12,72 +12,6 @@
   <script src="https://houselearning.org/home/main.js"></script>
   <script src="nav.js" defer></script>
 <link rel="stylesheet" href="style.css">
-
-<style>
-main.partner-page { max-width: 900px; margin: 0 auto; padding: 20px 0 40px; }
-
-.header-section {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.header-section h1 {
-  color: var(--primary);
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-.header-section p {
-  font-size: 18px;
-  color: var(--muted);
-}
-
-.section {
-  margin-bottom: 30px;
-}
-
-.section h2 {
-  color: var(--primary);
-  margin-bottom: 15px;
-  font-size: 28px;
-}
-.section p { margin-bottom: 12px; }
-
-.upload-card {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.dropzone {
-  border: 2px dashed rgba(0, 0, 0, 0.18);
-  border-radius: 12px;
-  padding: 25px;
-  text-align: center;
-  margin-bottom: 16px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  color: var(--muted);
-}
-.dropzone.highlight { background: rgba(58, 134, 255, 0.05); border-color: var(--primary); }
-.dropzone input { display: none; }
-
-.progress-bar-bg {
-  width: 100%;
-  background: #e0e0e0;
-  border-radius: 6px;
-  overflow: hidden;
-  margin-top: 14px;
-  height: 18px;
-}
-.progress-bar-fill {
-  height: 100%;
-  width: 0%;
-  background: var(--primary);
-  transition: width 0.3s ease;
-}
-
-.message { margin-top: 14px; font-size: 15px; }
-.success { color: #206520; }
-.error { color: #8B0000; }
-</style>
 </head>
 <body>
 
@@ -86,8 +20,8 @@ main.partner-page { max-width: 900px; margin: 0 auto; padding: 20px 0 40px; }
     <div class="brand">
       <div class="logo">HL</div>
       <div>
-        <div style="font-weight:800">HouseLearning</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">Learn anything — fast, free, focused</div>
+        <div class="brand-name">HouseLearning</div>
+        <div class="brand-tagline">Learn anything — fast, free, focused</div>
       </div>
     </div>
 
@@ -266,10 +200,10 @@ fileInput.addEventListener("change", () => handleFile(fileInput.files[0]));
 <footer>
   <div class="footer-grid">
     <div>
-      <div style="font-weight:800">HouseLearning</div>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px">© HouseLearning — free learning for curious people</div>
+      <div class="footer-name">HouseLearning</div>
+      <div class="footer-copy">© HouseLearning — free learning for curious people</div>
     </div>
-    <div style="display:flex;gap:18px;align-items:center">
+    <div class="footer-links">
       <a href="https://houselearning.org/home/about">About</a>
       <a href="https://github.com/houselearning/apply?tab=readme-ov-file#available-volunteer-jobs">Careers</a>
     </div>
