@@ -91,6 +91,12 @@ p {
     color: var(--muted);
 }
 
+hr {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin: 30px 0;
+}
+
 /* Components */
 .brand {
     display: flex;
@@ -98,6 +104,16 @@ p {
     align-items: center;
     text-decoration: none;
     color: var(--dark);
+}
+
+.brand-name {
+    font-weight: 800;
+}
+
+.brand-tagline {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
 }
 
 .logo {
@@ -162,6 +178,10 @@ html.nav-open body {
     line-height: 1;
 }
 
+.button-block {
+    width: 100%;
+}
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -222,6 +242,22 @@ select {
 textarea.field {
     min-height: 120px;
     resize: vertical;
+}
+
+.page-card {
+    margin: 20px auto 0;
+}
+
+.page-card--narrow {
+    max-width: 800px;
+}
+
+.page-card--wide {
+    max-width: 900px;
+}
+
+.link-primary {
+    color: var(--primary);
 }
 
 /* Hero Section */
@@ -300,6 +336,64 @@ textarea.field {
     box-shadow: var(--shadow-lg);
     padding: 24px;
     border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.featured-title {
+    margin-bottom: 8px;
+}
+
+.featured-sub {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.featured-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.featured-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.icon-box {
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex: 0 0 auto;
+}
+
+.icon-box--teal {
+    background: linear-gradient(135deg, #c7f9f6, #7dd3fc);
+}
+
+.icon-box--sunset {
+    background: linear-gradient(135deg, #fde68a, #fca5a5);
+}
+
+.icon-box--purple {
+    background: linear-gradient(135deg, #d6bcfa, #bde0fe);
+}
+
+.featured-name {
+    font-weight: 700;
+}
+
+.featured-meta {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.section-title-spaced {
+    margin-top: 28px;
 }
 
 .stats {
@@ -393,8 +487,12 @@ textarea.field {
     margin-top: auto;
 }
 
+.course .meta small {
+    color: var(--muted);
+}
+
 /* Features */
-section.features {
+.features {
     display: flex;
     gap: 24px;
     margin-top: 48px;
@@ -422,6 +520,181 @@ section.features {
     gap: 24px;
 }
 
+/* 404 */
+.notfound {
+    min-height: calc(100vh - 220px);
+    display: grid;
+    place-items: center;
+    padding: 30px 0 60px;
+}
+
+.notfound .card {
+    max-width: 520px;
+    text-align: center;
+}
+
+.notfound h1 {
+    font-size: 4rem;
+    margin: 0 0 8px;
+}
+
+.notfound h2 {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.notfound p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.notfound .icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Meta */
+.meta-error {
+    min-height: calc(100vh - 220px);
+    display: grid;
+    place-items: center;
+    padding: 20px 0 60px;
+}
+
+.meta-tip {
+    margin: 16px 0 0;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.meta-error details {
+    margin-top: 16px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.12);
+    padding-top: 16px;
+    color: var(--muted);
+}
+
+.meta-error code,
+.meta-error kbd {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.95em;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+/* Partners page */
+.partner-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0 40px;
+}
+
+.partner-page .header-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.partner-page .header-section h1 {
+    color: var(--primary);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.partner-page .header-section p {
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.partner-page .section {
+    margin-bottom: 30px;
+}
+
+.partner-page .section h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.partner-page .section p {
+    margin-bottom: 12px;
+}
+
+.partner-page .upload-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.partner-page .dropzone {
+    border: 2px dashed rgba(0, 0, 0, 0.18);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    color: var(--muted);
+}
+
+.partner-page .dropzone.highlight {
+    background: rgba(58, 134, 255, 0.05);
+    border-color: var(--primary);
+}
+
+.partner-page .dropzone input {
+    display: none;
+}
+
+.partner-page .progress-bar-bg {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 14px;
+    height: 18px;
+}
+
+.partner-page .progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.partner-page .message {
+    margin-top: 14px;
+    font-size: 15px;
+}
+
+.partner-page .success {
+    color: #206520;
+}
+
+.partner-page .error {
+    color: #8B0000;
+}
+
 /* Footer */
 footer {
     margin-top: 80px;
@@ -433,6 +706,30 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.footer-name {
+    font-weight: 800;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+#projects {
+    margin-top: 34px;
+}
+
+#projects .courses {
+    margin-top: 12px;
 }
 
 /* Mobile */
@@ -495,7 +792,7 @@ footer {
 
     .courses,
     .testimonials,
-    section.features {
+    .features {
         grid-template-columns: 1fr;
         flex-direction: column;
     }
