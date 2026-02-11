@@ -1,4 +1,4 @@
-// also.js — full ES module version
+// also.js — FULL PLUGIN
 
 /* ==============================
    📦 FIREBASE IMPORTS
@@ -22,7 +22,6 @@ import {
 
 /* ==============================
    🔥 FALLBACK FIREBASE CONFIG
-   (USED ONLY IF NONE EXISTS)
    ============================== */
 const fallbackFirebaseConfig = {
     apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
@@ -195,37 +194,86 @@ function openLanguageModal() {
 }
 
 /* ==============================
-   🌐 GOOGLE TRANSLATE LOADER
+   🌐 FULL PAGE GOOGLE TRANSLATE + TAB
    ============================== */
 function applyTranslation(lang) {
-  if (lang === "en") return;
-
-  if (!document.getElementById("google_translate_element")) {
-    const el = document.createElement("div");
-    el.id = "google_translate_element";
-    el.style.display = "none";
-    document.body.appendChild(el);
+  if (lang === "en") {
+    removeTranslationTab();
+    return;
   }
 
-  if (window.google?.translate) return;
+  let container = document.getElementById("google_translate_element");
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "google_translate_element";
+    container.style.display = "none";
+    document.body.appendChild(container);
+  }
 
-  const script = document.createElement("script");
-  script.src =
-    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-  document.body.appendChild(script);
+  if (!window.googleTranslateScriptLoaded) {
+    const script = document.createElement("script");
+    script.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+    window.googleTranslateScriptLoaded = true;
+  }
 
-  window.googleTranslateElementInit = () => {
+  window.googleTranslateElementInit = function () {
     new google.translate.TranslateElement(
-      { pageLanguage: "en", includedLanguages: lang },
+      { pageLanguage: "en", includedLanguages: lang, autoDisplay: true },
       "google_translate_element"
     );
+
+    setTimeout(() => {
+      const select = document.querySelector(".goog-te-combo");
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+        createTranslationTab();
+      }
+    }, 1000);
   };
+}
+
+/* ==============================
+   🟢 TRANSLATION TAB
+   ============================== */
+function createTranslationTab() {
+  if (document.getElementById("also-translation-tab")) return;
+
+  const tab = document.createElement("div");
+  tab.id = "also-translation-tab";
+  tab.innerText = "Page Translated";
+  Object.assign(tab.style, {
+    position: "fixed",
+    bottom: "16px",
+    right: "16px",
+    background: "#007bff",
+    color: "#fff",
+    padding: "8px 12px",
+    borderRadius: "6px",
+    cursor: "pointer",
+    zIndex: "999999",
+    fontFamily: "sans-serif",
+    fontSize: "14px",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.3)"
+  });
+
+  tab.addEventListener("click", () => {
+    const el = document.getElementById("google_translate_element");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  document.body.appendChild(tab);
+}
+
+function removeTranslationTab() {
+  const tab = document.getElementById("also-translation-tab");
+  if (tab) tab.remove();
 }
 
 /* ==============================
    🔁 AUTO-APPLY SAVED LANGUAGE
    ============================== */
 const savedLang = localStorage.getItem("also-lang");
-if (savedLang) {
-  applyTranslation(savedLang);
-}
+if (savedLang) applyTranslation(savedLang);
