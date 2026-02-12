@@ -7,6 +7,7 @@ This roadmap includes the upcoming things that are happening in the next twelve 
 - [ ] - incomplete
 ## Febuary 2026
 - [x] Finish Grade 1 Lesson Videos
+- [ ] Fix C# Lesson Issues
 - [ ] Add notification system (*50/50 completed*)
 - [ ] Remove the old *we're making updates* banner
 - [ ] Add email fowarding
@@ -14,6 +15,7 @@ This roadmap includes the upcoming things that are happening in the next twelve 
 - [ ] Finish videos for Grade 2 Courses
 - [ ] Add Grade 3 Lessons
 - [ ] Finish videos for Grade 3 Lessons
+- [ ] Fix lesson of the day lessons
 ## March 2026
 - [ ] Add HouseLearning Quiz Mode
 - [ ] Add Lesson Tracking
