@@ -6,7 +6,7 @@
   <h1>HouseLearning Home</h1>
 
   <p>Welcome to <strong>HouseLearning Home</strong> — a fun and interactive learning game website designed to make education engaging through browser-based mini-games and activities. The platform offers a collection of educational games that help users practice and reinforce their skills while having fun.</p>
-
+<a href="Roadmap.md">Curious to see our plans? Check the roadmap.</a>
   <h2>🎮 Features</h2>
   <ul>
     <li><strong>Interactive educational games</strong> — Engaging activities that respond to player input in real time.</li>
