@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narwhal Bot Console</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --accent: #238636; }
+        body { background: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; display: flex; height: 100vh; }
+        #sidebar { width: 300px; border-right: 1px solid var(--border); background: var(--card); padding: 20px; }
+        #main { flex: 1; padding: 40px; }
+        .hidden { display: none !important; }
+        button { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+        #console { background: #000; color: #7ee787; padding: 15px; height: 200px; overflow-y: auto; font-family: monospace; border-radius: 6px; margin-top: 20px; }
+        input, textarea { width: 100%; background: #0d1117; border: 1px solid var(--border); color: white; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <div id="auth-screen" style="position:fixed; inset:0; background:var(--bg); z-index:100; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <h1>HouseLearning Admin</h1>
+        <button onclick="login()">Login with Google</button>
+    </div>
+
+    <div id="sidebar">
+        <h3>Repositories</h3>
+        <div id="repo-list">Loading...</div>
+    </div>
+
+    <div id="main">
+        <h2 id="active-repo">Select a Repository</h2>
+        <div id="controls" class="hidden">
+            <input type="text" id="filePath" placeholder="path/to/file.md">
+            <textarea id="fileContent" rows="10" placeholder="Content..."></textarea>
+            <button onclick="sendCommit()">Commit as neilthenarwhal-bot</button>
+        </div>
+        <div id="console">System Ready.</div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+
+    <script>
+        // --- CONFIGURATION ---
+        const firebaseConfig = {
+    apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
+    authDomain: "contract-center-llc-10.firebaseapp.com",
+    projectId: "contract-center-llc-10",
+    storageBucket: "contract-center-llc-10.firebasestorage.app",
+    messagingSenderId: "323221512767",
+    appId: "1:323221512767:web:6421260f875997dbf64e8a",
+        };
+        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxTfgak4gjvbzARZ3oVtdDd7hD9JJfmgfvwQnAN5XATa2KJ3dmy9bpyql1Lfl8f8T5l/exec";
+        // ---------------------
+
+        firebase.initializeApp(firebaseConfig);
+        let currentUser = null;
+        let selectedRepo = null;
+
+        function log(msg) {
+            const c = document.getElementById('console');
+            c.innerHTML += `<div>> ${msg}</div>`;
+            c.scrollTop = c.scrollHeight;
+        }
+
+        async function login() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            try {
+                const result = await firebase.auth().signInWithPopup(provider);
+                currentUser = result.user;
+                
+                // Verify Admin Role via GAS
+                log("Verifying permissions...");
+                const resp = await callGAS('verifyAdmin', { uid: currentUser.uid });
+                
+                if (resp.isAdmin) {
+                    document.getElementById('auth-screen').classList.add('hidden');
+                    loadRepos();
+                } else {
+                    alert("Unauthorized: Admin role required in Firestore.");
+                }
+            } catch (e) { log("Auth Error: " + e.message); }
+        }
+
+        async function callGAS(action, params) {
+            const url = `${GAS_WEB_APP_URL}?action=${action}&uid=${currentUser?.uid || params.uid}`;
+            const response = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(params)
+            });
+            return await response.json();
+        }
+
+        async function loadRepos() {
+            const data = await callGAS('getRepos', {});
+            const list = document.getElementById('repo-list');
+            list.innerHTML = "";
+            data.repos.forEach(repo => {
+                const div = document.createElement('div');
+                div.style.padding = "5px; cursor:pointer;";
+                div.innerText = repo.name;
+                div.onclick = () => {
+                    selectedRepo = repo.name;
+                    document.getElementById('active-repo').innerText = repo.name;
+                    document.getElementById('controls').classList.remove('hidden');
+                };
+                list.appendChild(div);
+            });
+        }
+
+        async function sendCommit() {
+            const payload = {
+                repo: selectedRepo,
+                path: document.getElementById('filePath').value,
+                content: document.getElementById('fileContent').value
+            };
+            log(`Committing to ${selectedRepo}...`);
+            const res = await callGAS('commit', payload);
+            log(res.status === "success" ? "Done!" : "Error: " + res.message);
+        }
+    </script>
+</body>
+</html>
