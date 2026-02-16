@@ -789,11 +789,9 @@
       const closeBtn = popup.querySelector('.survey-close');
       if (closeBtn) {
         closeBtn.onclick = () => {
-          const result = showCloseSurveyWarning(popup);
-          const shouldClose = (result !== false);
-          if (shouldClose) {
-            animateCloseAndRemove();
-          }
+          // showCloseSurveyWarning is used for its side effects; do not rely on a return value
+          showCloseSurveyWarning(popup);
+          animateCloseAndRemove();
         };
       }
 
