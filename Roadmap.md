@@ -1,19 +1,19 @@
-# HouseLearning - Whats' to come
+# HouseLearning - What's to come
 
 This roadmap includes the upcoming things that are happening in the next twelve months. To contribute to our roadmap, submit a **PR**. This roadmap updates frequently.
 <br>
 ### Key:
 - [x] - done
 - [ ] - incomplete
-## Febuary 2026
+## February 2026
 - [x] Finish Grade 1 Lesson Videos
-- [ ] Fix C# Lesson Issues
+- [x] Fix C# Lesson Issues
 - [ ] Remove the old *we're making updates* banner
 - [x] Create an advertisement campaign
 - [ ] Finish videos for Grade 2 Courses
 - [ ] Add Grade 3 Lessons
 - [ ] Finish videos for Grade 3 Lessons
-- [ ] Fix lesson of the day lessons
+- [ ] Fix the lesson of the day lessons
 - [ ] Add notification system (*50/50 completed*)
 ## March 2026
 - [ ] Add HouseLearning Quiz Mode
