@@ -787,7 +787,13 @@
 
       // wire close buttons to animate down first
       const closeBtn = popup.querySelector('.survey-close');
-      if (closeBtn) closeBtn.onclick = () => showCloseSurveyWarning(popup) || animateCloseAndRemove();
+      if (closeBtn) {
+        closeBtn.onclick = () => {
+          // showCloseSurveyWarning is used for its side effects; do not rely on a return value
+          showCloseSurveyWarning(popup);
+          animateCloseAndRemove();
+        };
+      }
 
       if (laterBtn) laterBtn.onclick = () => animateCloseAndRemove();
 
