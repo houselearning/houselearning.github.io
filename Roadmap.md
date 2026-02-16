@@ -29,5 +29,53 @@ This roadmap includes the upcoming things that are happening in the next twelve 
 - [ ] Finish videos for Grade 5 Lessons
 ## April 2026
 - [ ] Analytics Check
-- [ ] HouseLearning en Español 
-
+- [ ] HouseLearning en Español
+- [ ] HouseLearning Cookbook Automated System
+- [ ] HouseLearning API
+- [ ] Add Grade 6 Lessons
+- [ ] HouseLearning Cookbook
+- [ ] Finish Grade 6 Lesson Videos
+- [ ] Add Grade 7 Math Lessons
+- [ ] Finish Grade 7 Math Videos
+- [ ] SafeAI 2.5 Mini
+- [ ] Add Grade 8 Lessons
+- [ ] Finish Grade 8 Lessons
+## May 2026
+ - [ ] Add Grade 9 Lessons
+ - [ ] Finish Grade 9 Lessons
+ - [ ] Cookbook Automation 1.25
+ - [ ] HouseLearning Cookbook Release 2.0
+ - [ ] Add Grade 10 Lessons
+ - [ ] Finish Grade 10 Lessons
+ - [ ] Analytics Check
+ - [ ] Add Grade 11 Lessons
+ - [ ] Finish Grade 11 Lessons
+ - [ ] Add Grade 12 Math Lessons
+ - [ ] Finish Grade 12 Math Lessons
+ - [ ] Add 2 Placeholder Math Games
+ - [ ] Add Grade K Math Lessons
+## June 2026
+ - [ ] Finish Grade K Math Lessons
+ - [ ] Wrap up Math
+ - [ ] Add Grade K Science Lessons
+ - [ ] Finish Grade K Science Lessons
+ - [ ] Start new advertisement campaign
+ - [ ] Add Grade 1 Science Lessons
+ - [ ] Finish Grade 1 Science Lessons
+ - [ ] Add Grade 2 Science Lessons
+ - [ ] Finish Grade 2 Science Lessons
+ - [ ] Add SafeAI 2.5 Mega
+ - [ ] Add Grade 3 Science Lessons
+ - [ ] Add SafeAI 3.0 Dynasty
+ - [ ] Finish Grade 3 Science Lessons
+## July 2026
+ - [ ] Add Grade 4 Science Lessons
+ - [ ] Change Theme to 4th of July (*first theme change*)
+ - [ ] Finish Grade 4 Science Lessons
+ - [ ] Remove 4th of July Theme
+ - [ ] Add Grade 5 Science Lessons
+ - [ ] Finish Grade 5 Science Lessons
+ - [ ] Add Grade 6 Science Lessons
+ - [ ] Finish Grade 6 Science Lessons
+ - [ ] Add Grade 7 Science Lessons
+ - [ ] Finish Grade 7 Science Lessons
