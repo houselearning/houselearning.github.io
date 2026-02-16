@@ -31,7 +31,7 @@ This roadmap includes the upcoming things that are happening in the next twelve 
 - [ ] Analytics Check
 - [ ] HouseLearning en Español
 - [ ] HouseLearning Cookbook Automated System
-- [ ] HouseLearning API
+- [ ] Draft HouseLearning API
 - [ ] Add Grade 6 Lessons
 - [ ] HouseLearning Cookbook
 - [ ] Finish Grade 6 Lesson Videos
@@ -40,6 +40,9 @@ This roadmap includes the upcoming things that are happening in the next twelve 
 - [ ] SafeAI 2.5 Mini
 - [ ] Add Grade 8 Lessons
 - [ ] Finish Grade 8 Lessons
+- [ ] Draft HouseLearning API
+- [ ] Publish HouseLearning API
+- [ ] Fix HouseLearning Chrome Extension & Publish V 2.0
 ## May 2026
  - [ ] Add Grade 9 Lessons
  - [ ] Finish Grade 9 Lessons
@@ -79,3 +82,60 @@ This roadmap includes the upcoming things that are happening in the next twelve 
  - [ ] Finish Grade 6 Science Lessons
  - [ ] Add Grade 7 Science Lessons
  - [ ] Finish Grade 7 Science Lessons
+ - [ ] Check CS Courses for Accuracy
+ - [ ] Add Turkish Language Support
+## August 2026
+ - [ ] Finish HouseLearning App
+ - [ ] Start Grade 8 Science Lessons
+ - [ ] Finish Grade 8 Science Lessons
+ - [ ] Start Grade 9 Science Lessons
+ - [ ] Finish Grade 9 Science Lessons
+ - [ ] Start Grade 10 Science Lessons
+ - [ ] Finish Grade 10 Science Lessons
+ - [ ] Add SafeAI 3.1 Mini (**HouseLearning Generated Model (*not open source*)**)
+ - [ ] Start Grade 10 Science Lessons
+ - [ ] Publish SafeAI 3.1 Mini to Hugging Face (*~135 Million Params*)
+ - [ ] Finish Grade 10 Science Lessons
+ - [ ] Draft Automated Moderation for HouseLearning
+## September 2026
+ - [ ] Publish SafeMod 0.0.96
+ - [ ] Publish SafeAI 0.0.50 to Hugging Face (*~50 Million Params*)
+ - [ ] Start Grade 11 Science Lessons
+ - [ ] Finish Grade 11 Science Lessons
+ - [ ] Start Grade 12 Science Lessons
+ - [ ] Finish Grade 12 Science Lessons
+ - [ ] Publish *.pptx* video slides to the **assessments** repository
+ - [ ] Wrap-up Science Page
+ - [ ] Start NEW Advertisement Campaign
+ - [ ] Add a Donation Button on HouseLearning
+ - [ ] **IF:** HouseLearning gets popular enough, add ads to our pages.
+ - [ ] Rennovate HouseLearning Pages
+## October 2026
+ - [ ] Rennovate HouseLearning Gists
+ - [ ] Rennovate HouseLearning Teacher Dashboard
+ - [ ] Rennovate HouseLearning Community Forum
+ - [ ] Add Auto Moderators to HouseLearning Gists
+ - [ ] Add Auto Moderators to HouseLearning Community Forum
+ - [ ] Draft *comments.js* for HouseLearning Lesson Comments
+ - [ ] Publish *comments.js* 1.0
+ - [ ] Add Auto Moderators to *comments.js*
+ - [ ] Rennovate HouseLearning API
+ - [ ] Add HouseLearning Lesson CLI
+ - [ ] Rennovate HouseLearning App
+ - [ ] Add HouseLearning Lesson CLI to HouseLearning App
+## November 2026
+ - [ ] Add HouseLearning App Homepage
+ - [ ] Rennovate the HouseLearning Docs
+ - [ ] Integrate the HouseLearning Engine (*Math/Physics*) into lessons
+ - [ ] Finish integrating the HouseLearning Engine (*Math/Physics*) into lessons
+ - [ ] Review Community Feedback & Take Action
+ - [ ] Integrate Community Feedback
+ - [ ] Expand on the HouseLearning YouTube Channel
+ - [ ] Add Video Courses to the HouseLearning CS Lessons
+ - [ ] Kick Inactive Acknowledged Contributors
+ - [ ] Add HouseLearning Chrome Extension to Chrome Web Store
+ - [ ] Firebase Check
+ - [ ] RTDB Check
+## December 2026
+ - [ ] Analytics Check
+ - [ ] Rennovate low-rated games
