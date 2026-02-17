@@ -20,6 +20,7 @@ This roadmap includes the upcoming things that are happening in the next twelve 
 - [ ] Add Lesson Tracking
 - [ ] Add SafeAI Comeback 2.0 (*yes, we're bringing back SafeAI*)
 - [ ] Add GitHub Actions Misspelling Tracker
+- [ ] Launch HouseLearning Courses
 - [ ] Add Grade 4 Lessons
 - [ ] Finish videos for Grade 4 Lessons
 - [ ] Start Advertisement Campaign 2.0
