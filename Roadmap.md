@@ -139,3 +139,4 @@ This roadmap includes the upcoming things that are happening in the next twelve 
 ## December 2026
  - [ ] Analytics Check
  - [ ] Rennovate low-rated games
+ - [ ] Add Auto-Theme Generator for website (*christmas, halloween, 4th of july, etc*)
