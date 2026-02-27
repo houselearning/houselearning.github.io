@@ -5,65 +5,51 @@
 (() => {
   const XML_PATH = "/search-task.xml";
 
-  const CSS = `
-  nav {
-    position: relative;
-  }
+  function formatUrlToTitle(url) {
+    try {
+      // Remove protocol and domain
+      let path = url.replace(/^https?:\/\/[^\/]+/, "");
 
-  .nav-xml-search {
-    position: relative;
-    max-width: 260px;
-    margin-left: auto;
-    font-family: system-ui, sans-serif;
-  }
+      // Special case for root
+      if (path === "/" || path === "") return "HouseLearning Home";
 
-  .nav-xml-search input {
-    width: 100%;
-    padding: 9px 14px;
-    border-radius: 999px;
-    border: 1px solid #ddd;
-    outline: none;
-    font-size: 14px;
-    background: #fff;
-    transition: all 0.2s ease;
-  }
+      // Basic cleanup
+      path = path.replace(/\/$/, "").replace(/\.html$/, "");
 
-  .nav-xml-search input:focus {
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-  }
+      const segments = path.split("/").filter(s => s && s !== "home");
 
-  .nav-xml-results {
-    position: absolute;
-    top: 110%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    overflow: hidden;
-    z-index: 9999;
-  }
+      if (segments.length === 0) return "HouseLearning";
 
-  .nav-xml-results a {
-    display: block;
-    padding: 10px 14px;
-    font-size: 14px;
-    color: #111;
-    text-decoration: none;
-  }
+      // Map common paths to pretty names
+      const segmentMap = {
+        "math": "Math",
+        "computerscience": "Computer Science",
+        "computer-science-page": "Computer Science",
+        "about": "About Us",
+        "auth": "Login / Sign Up",
+        "games": "Games",
+        "blog": "Blog"
+      };
 
-  .nav-xml-results a:hover {
-    background: #f3f4f6;
-  }
-  `;
+      const parts = segments.map(s => {
+        if (segmentMap[s]) return segmentMap[s];
 
-  function injectCSS() {
-    if (document.getElementById("nav-xml-search-css")) return;
-    const style = document.createElement("style");
-    style.id = "nav-xml-search-css";
-    style.textContent = CSS;
-    document.head.appendChild(style);
+        // Convert kebab-case or underscore to Title Case
+        return s.split(/[-_]/)
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+      });
+
+      // Format based on depth
+      if (parts.length > 1) {
+        // e.g. Math: Fractions Add Subtract
+        return `${parts[0]}: ${parts.slice(1).join(" ")}`;
+      }
+
+      return parts[0];
+    } catch (e) {
+      return url;
+    }
   }
 
   class NavXMLSearch {
@@ -74,12 +60,17 @@
     }
 
     async init() {
-      injectCSS();
+      // Styles are now in style.css
 
       this.container = document.createElement("div");
       this.container.className = "nav-xml-search";
       this.container.innerHTML = `
-        <input type="text" placeholder="Search..." autocomplete="off">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" placeholder="Search..." autocomplete="off">
+        </div>
         <div class="nav-xml-results" hidden></div>
       `;
 
@@ -106,7 +97,7 @@
 
     bind() {
       this.input.addEventListener("input", () => {
-        const q = this.input.value.toLowerCase();
+        const q = this.input.value.toLowerCase().trim();
         this.results.innerHTML = "";
 
         if (!q) {
@@ -116,17 +107,24 @@
 
         const matches = this.data
           .filter(url => url.toLowerCase().includes(q))
-          .slice(0, 6);
+          .slice(0, 8);
 
         if (!matches.length) {
-          this.results.hidden = true;
+          this.results.innerHTML = `<div class="no-results">No matches found for "${q}"</div>`;
+          this.results.hidden = false;
           return;
         }
 
         matches.forEach(url => {
           const a = document.createElement("a");
+          const title = formatUrlToTitle(url);
+          const shortUrl = url.replace(/^https?:\/\/(www\.)?houselearning\.org/, "");
+
           a.href = url;
-          a.textContent = url;
+          a.innerHTML = `
+            <span class="item-title">${title}</span>
+            <span class="item-url">${shortUrl || "/"}</span>
+          `;
           this.results.appendChild(a);
         });
 
@@ -136,6 +134,14 @@
       document.addEventListener("click", e => {
         if (!this.container.contains(e.target)) {
           this.results.hidden = true;
+        }
+      });
+
+      // Close on escape
+      this.input.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          this.results.hidden = true;
+          this.input.blur();
         }
       });
     }
