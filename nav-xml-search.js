@@ -148,8 +148,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.querySelector("nav");
-    if (nav) new NavXMLSearch(nav);
+    const actions = document.querySelector(".nav-actions");
+    if (actions) new NavXMLSearch(actions);
   });
 
 })();

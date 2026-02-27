@@ -133,20 +133,37 @@ hr {
 
 nav {
     display: flex;
-    gap: 8px;
+    gap: 24px;
     align-items: center;
+    flex: 1;
+    justify-content: flex-end;
 }
 
-nav a {
+.nav-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+nav a:not(.button) {
     text-decoration: none;
     color: var(--muted);
     font-weight: 500;
     padding: 8px 12px;
     border-radius: 8px;
     transition: all 0.2s;
+    font-size: 14px;
 }
 
-nav a:hover {
+nav a:not(.button):hover {
     color: var(--primary);
     background: rgba(58, 134, 255, 0.05);
 }
@@ -187,13 +204,17 @@ html.nav-open body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 0 18px;
+    height: 42px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 14px;
     transition: all 0.2s;
     cursor: pointer;
     border: 1px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .btn-primary {
@@ -210,20 +231,18 @@ html.nav-open body {
 .btn-ghost {
     background: transparent;
     color: var(--dark);
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: transparent;
 }
 
 .btn-ghost:hover {
-    background: white;
-    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 /* Nav XML Search Enhancement */
 .nav-xml-search {
     position: relative;
-    max-width: 280px;
+    max-width: 220px;
     width: 100%;
-    margin-left: 8px;
 }
 
 .search-wrapper {
@@ -244,7 +263,8 @@ html.nav-open body {
 
 .nav-xml-search input {
     width: 100%;
-    padding: 10px 14px 10px 36px;
+    padding: 0 14px 0 36px;
+    height: 42px;
     border-radius: 999px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     outline: none;
@@ -852,20 +872,34 @@ footer {
         left: 16px;
         right: 16px;
         flex-direction: column;
-        gap: 6px;
-        padding: 12px;
-        background: rgba(255, 255, 255, 0.92);
+        gap: 16px;
+        padding: 24px 16px;
+        background: rgba(255, 255, 255, 0.98);
         border: 1px solid rgba(0, 0, 0, 0.06);
         border-radius: 16px;
         box-shadow: var(--shadow-lg);
         z-index: 60;
     }
 
+    .nav-links,
+    .nav-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    nav a:not(.button) {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 12px;
+    }
+
     html.nav-open nav {
         display: flex;
     }
 
-    nav a.button {
+    nav .button {
         width: 100%;
     }
 
