@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>HouseLearning Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../style.css">
-  <script src="../nav.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
   <style>
     main {
       max-width: 800px;
@@ -25,6 +26,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="container">
@@ -63,7 +65,8 @@
           <input class="field" id="subject" placeholder="Notification Subject">
           <textarea class="field" id="body" placeholder="Notification Body"></textarea>
 
-          <button class="button btn-primary button-block" type="button" onclick="sendNotification()">Send Notification</button>
+          <button class="button btn-primary button-block" type="button" onclick="sendNotification()">Send
+            Notification</button>
           <p id="status"></p>
         </div>
 
@@ -92,11 +95,11 @@
   <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { 
-      getFirestore, doc, getDoc, collection, addDoc, serverTimestamp 
+    import {
+      getFirestore, doc, getDoc, collection, addDoc, serverTimestamp
     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-    import { 
-      getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup 
+    import {
+      getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup
     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
     // Firebase config
@@ -176,4 +179,5 @@
   </script>
 
 </body>
+
 </html>
