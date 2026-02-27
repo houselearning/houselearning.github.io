@@ -14,7 +14,7 @@
       if (path === "/" || path === "") return "HouseLearning Home";
 
       // Basic cleanup
-      path = path.replace(/\/$/, "").replace(/\.html$/, "");
+      path = path.replace(/\/$/, "").replace(/\.html?$/, "");
 
       const segments = path.split("/").filter(s => s && s !== "home");
 
@@ -110,7 +110,11 @@
           .slice(0, 8);
 
         if (!matches.length) {
-          this.results.innerHTML = `<div class="no-results">No matches found for "${q}"</div>`;
+          const noResults = document.createElement("div");
+          noResults.className = "no-results";
+          noResults.textContent = `No matches found for "${q}"`;
+          this.results.innerHTML = "";
+          this.results.appendChild(noResults);
           this.results.hidden = false;
           return;
         }
@@ -120,11 +124,20 @@
           const title = formatUrlToTitle(url);
           const shortUrl = url.replace(/^https?:\/\/(www\.)?houselearning\.org/, "");
 
-          a.href = url;
-          a.innerHTML = `
-            <span class="item-title">${title}</span>
-            <span class="item-url">${shortUrl || "/"}</span>
-          `;
+          if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("/")) {
+            a.href = url;
+          }
+
+          const titleSpan = document.createElement("span");
+          titleSpan.className = "item-title";
+          titleSpan.textContent = title;
+
+          const urlSpan = document.createElement("span");
+          urlSpan.className = "item-url";
+          urlSpan.textContent = shortUrl || "/";
+
+          a.appendChild(titleSpan);
+          a.appendChild(urlSpan);
           this.results.appendChild(a);
         });
 
