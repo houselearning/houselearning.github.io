@@ -19,7 +19,6 @@
   const DAILY_LIMIT = 15;
   const COOLDOWN_SECONDS = 20;
 
-  const LOCAL_QUEUE_KEY = "survey_save_queue_v1";
   const ANON_ID_KEY = "anonSurveyId_v1";
   const SESSION_BUCKET_KEY = "survey_session_bucket_v1";
   const SURVEY_RATE_COLLECTION = "survey_rate";
