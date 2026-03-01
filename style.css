@@ -56,8 +56,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 24px 0;
     margin-bottom: 20px;
+    gap: 20px;
 }
 
 /* Typography */
@@ -215,6 +216,94 @@ html.nav-open body {
 .btn-ghost:hover {
     background: white;
     border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Nav XML Search Enhancement */
+.nav-xml-search {
+    position: relative;
+    max-width: 280px;
+    width: 100%;
+    margin-left: 8px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper .search-icon {
+    position: absolute;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    color: var(--muted);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.nav-xml-search input {
+    width: 100%;
+    padding: 10px 14px 10px 36px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-xml-search input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.15);
+}
+
+.nav-xml-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: -20px;
+    right: -20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 9999;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 6px;
+}
+
+.nav-xml-results a {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 16px;
+    border-radius: 10px;
+    transition: all 0.15s ease;
+    text-decoration: none;
+    gap: 2px;
+}
+
+.nav-xml-results a:hover {
+    background: var(--light);
+}
+
+.nav-xml-results .item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.nav-xml-results .item-url {
+    font-size: 11px;
+    color: var(--muted);
+    opacity: 0.8;
+}
+
+.nav-xml-results .no-results {
+    padding: 16px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
 }
 
 /* Forms */
