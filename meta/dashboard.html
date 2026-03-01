@@ -125,7 +125,7 @@
     // Check dashboard access
     async function verifyDashboardAccess(user) {
       try {
-        const testDoc = await getDoc(doc(db, "dashboard", "accessCheck"));
+        await getDoc(doc(db, "dashboard", "accessCheck"));
         return true; // If read succeeds, access is allowed
       } catch (err) {
         redirectToAuth();
