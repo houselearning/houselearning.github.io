@@ -1,220 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HouseLearning Partner Program</title>
-    
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-  <script src="https://houselearning.org/home/main.js"></script>
-  <script src="nav.js" defer></script>
-  <script type="module" src="https://www.houselearning.org/also.js"></script>
-  <script src="https://houselearning.org/cookiebanner.js"></script>
-  <script src="/feedback.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://houselearning.org/home/main.js"></script>
+    <script src="/assets/js/nav.js" defer></script>
+    <script type="module" src="/assets/js/also.js"></script>
+    <script src="/assets/js/cookiebanner.js"></script>
+    <script src="/assets/js/feedback.js"></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="/assets/images/favicons/favicon.ico">
 </head>
+
 <body>
 
-<div class="container">
-    <header>
-        <div class="brand">
-            <div class="logo">HL</div>
-            <div>
-                <div class="brand-name">HouseLearning</div>
-                <div class="brand-tagline">Learn anything — fast, free, focused</div>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">HL</div>
+                <div>
+                    <div class="brand-name">HouseLearning</div>
+                    <div class="brand-tagline">Learn anything — fast, free, focused</div>
+                </div>
             </div>
-        </div>
-        <nav id="site-nav">
-            <a href="/home">Home</a>
-            <a href="https://houselearning.org/safe-library">SafeLibrary</a>
-            <a href="https://houselearning.org/home/about">About</a>
-            <a href="https://apply.houselearning.org">Apply</a>
-            <a href="https://github.com/houselearning">View on GitHub</a>
-            <a class="button btn-ghost" href="https://houselearning.org/auth/">Log in</a>
-            <a class="button btn-primary" href="https://houselearning.org/auth/">Sign up</a>
-        </nav>
-        <button class="nav-toggle button btn-ghost" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">Menu</button>
-    </header>
-
-    <main class="partner-page">
-        <div class="header-section">
-            <h1>HouseLearning Partner Program</h1>
-            <p>Join our network of educational partners to collaborate, share content, and grow together.</p>
-        </div>
-
-        <div class="card section">
-            <h2>What Being a Partner Means</h2>
-            <p>Partners get access to domain support (*.houselearning.org), exclusive lesson content, blog contributions, and GitHub inclusion.</p>
-        </div>
-
-        <div class="card section">
-            <h2>How to Become a Partner</h2>
-            <p>Download our Partnership Form, complete it, and upload it below. Ensure the verification code <strong>35105</strong> is included.</p>
-            <a class="button btn-primary" href="https://houselearning.org/meta/partner-form.pdf" target="_blank">Download PDF Form</a>
-        </div>
-
-        <div class="card upload-card">
-            <h2>Upload Your Completed PDF</h2>
-            <div id="dropzone" class="dropzone">
-                Drag & Drop PDF here<br>or Click to Browse
-                <input type="file" id="fileInput" accept="application/pdf" style="display:none;">
-            </div>
-
-            <div class="progress-bar-bg">
-                <div id="progressBar" class="progress-bar-fill" style="width: 0%; height: 5px; background: #007bff; transition: width 0.3s;"></div>
-            </div>
-
-            <div id="status" class="message"></div>
-            <div class="g-recaptcha" data-sitekey="6LeNBUwsAAAAAMwDhp2LCD6iy_uDg0exFUxqNfFi"></div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <div class="footer-name">HouseLearning</div>
-                <div class="footer-copy">© HouseLearning — free learning for curious people</div>
-            </div>
-            <div class="footer-links">
+            <nav id="site-nav">
+                <a href="/home">Home</a>
+                <a href="https://houselearning.org/safe-library">SafeLibrary</a>
                 <a href="https://houselearning.org/home/about">About</a>
-                <a href="https://github.com/houselearning/apply?tab=readme-ov-file#available-volunteer-jobs">Careers</a>
+                <a href="https://apply.houselearning.org">Apply</a>
+                <a href="https://github.com/houselearning">View on GitHub</a>
+                <a class="button btn-ghost" href="https://houselearning.org/auth/">Log in</a>
+                <a class="button btn-primary" href="https://houselearning.org/auth/">Sign up</a>
+            </nav>
+            <button class="nav-toggle button btn-ghost" type="button" aria-label="Open menu" aria-controls="site-nav"
+                aria-expanded="false">Menu</button>
+        </header>
+
+        <main class="partner-page">
+            <div class="header-section">
+                <h1>HouseLearning Partner Program</h1>
+                <p>Join our network of educational partners to collaborate, share content, and grow together.</p>
             </div>
-        </div>
-    </footer>
-</div>
 
-<script type="module">
-    // Firebase v9 Modular SDK
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+            <div class="card section">
+                <h2>What Being a Partner Means</h2>
+                <p>Partners get access to domain support (*.houselearning.org), exclusive lesson content, blog
+                    contributions, and GitHub inclusion.</p>
+            </div>
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
-        authDomain: "contract-center-llc-10.firebaseapp.com",
-        projectId: "contract-center-llc-10",
-        storageBucket: "contract-center-llc-10.firebasestorage.app",
-        messagingSenderId: "323221512767",
-        appId: "1:323221512767:web:6421260f875997dbf64e8a"
-    };
+            <div class="card section">
+                <h2>How to Become a Partner</h2>
+                <p>Download our Partnership Form, complete it, and upload it below. Ensure the verification code
+                    <strong>35105</strong> is included.
+                </p>
+                <a class="button btn-primary" href="https://houselearning.org/meta/partner-form.pdf"
+                    target="_blank">Download PDF Form</a>
+            </div>
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+            <div class="card upload-card">
+                <h2>Upload Your Completed PDF</h2>
+                <div id="dropzone" class="dropzone">
+                    Drag & Drop PDF here<br>or Click to Browse
+                    <input type="file" id="fileInput" accept="application/pdf" style="display:none;">
+                </div>
 
-    // PDF.js Worker setup
-    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+                <div class="progress-bar-bg">
+                    <div id="progressBar" class="progress-bar-fill"
+                        style="width: 0%; height: 5px; background: #007bff; transition: width 0.3s;"></div>
+                </div>
 
-    const dropzone = document.getElementById("dropzone");
-    const fileInput = document.getElementById("fileInput");
-    const statusEl = document.getElementById("status");
-    const progressBar = document.getElementById("progressBar");
+                <div id="status" class="message"></div>
+                <div class="g-recaptcha" data-sitekey="6LeNBUwsAAAAAMwDhp2LCD6iy_uDg0exFUxqNfFi"></div>
+            </div>
+        </main>
 
-    function updateProgress(percent) { progressBar.style.width = percent + "%"; }
-    function resetProgress() { updateProgress(0); }
+        <footer>
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-name">HouseLearning</div>
+                    <div class="footer-copy">© HouseLearning — free learning for curious people</div>
+                </div>
+                <div class="footer-links">
+                    <a href="https://houselearning.org/home/about">About</a>
+                    <a
+                        href="https://github.com/houselearning/apply?tab=readme-ov-file#available-volunteer-jobs">Careers</a>
+                </div>
+            </div>
+        </footer>
+    </div>
 
-    async function handleFile(file) {
-        statusEl.textContent = "";
-        statusEl.className = "message";
-        resetProgress();
+    <script type="module">
+        // Firebase v9 Modular SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-        const captchaResponse = grecaptcha.getResponse();
-        if (!captchaResponse) {
-            statusEl.textContent = "Please complete the CAPTCHA.";
-            statusEl.className = "message error";
-            return;
-        }
+        const firebaseConfig = {
+            apiKey: "AIzaSyDoXSwni65CuY1_32ZE8B1nwfQO_3VNpTw",
+            authDomain: "contract-center-llc-10.firebaseapp.com",
+            projectId: "contract-center-llc-10",
+            storageBucket: "contract-center-llc-10.firebasestorage.app",
+            messagingSenderId: "323221512767",
+            appId: "1:323221512767:web:6421260f875997dbf64e8a"
+        };
 
-        if (!file || file.type !== "application/pdf") {
-            statusEl.textContent = "Please select a valid PDF.";
-            statusEl.className = "message error";
-            return;
-        }
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-        const reader = new FileReader();
-        
-        reader.onloadstart = () => { statusEl.textContent = "Reading PDF…"; };
+        // PDF.js Worker setup
+        pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
 
-        reader.onload = async () => {
-            try {
-                const arrayBuffer = reader.result;
-                const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-                let markdownContent = "";
-                let slides = [];
-                const totalPages = pdf.numPages;
+        const dropzone = document.getElementById("dropzone");
+        const fileInput = document.getElementById("fileInput");
+        const statusEl = document.getElementById("status");
+        const progressBar = document.getElementById("progressBar");
 
-                for (let i = 1; i <= totalPages; i++) {
-                    const page = await pdf.getPage(i);
-                    const content = await page.getTextContent();
-                    const textItems = content.items.map(item => item.str);
-                    
-                    textItems.forEach(line => {
-                        markdownContent += line.trim().endsWith(":") ? `## ${line.trim()}\n` : `${line.trim()}\n`;
+        function updateProgress(percent) { progressBar.style.width = percent + "%"; }
+        function resetProgress() { updateProgress(0); }
+
+        async function handleFile(file) {
+            statusEl.textContent = "";
+            statusEl.className = "message";
+            resetProgress();
+
+            const captchaResponse = grecaptcha.getResponse();
+            if (!captchaResponse) {
+                statusEl.textContent = "Please complete the CAPTCHA.";
+                statusEl.className = "message error";
+                return;
+            }
+
+            if (!file || file.type !== "application/pdf") {
+                statusEl.textContent = "Please select a valid PDF.";
+                statusEl.className = "message error";
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onloadstart = () => { statusEl.textContent = "Reading PDF…"; };
+
+            reader.onload = async () => {
+                try {
+                    const arrayBuffer = reader.result;
+                    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                    let markdownContent = "";
+                    let slides = [];
+                    const totalPages = pdf.numPages;
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        const page = await pdf.getPage(i);
+                        const content = await page.getTextContent();
+                        const textItems = content.items.map(item => item.str);
+
+                        textItems.forEach(line => {
+                            markdownContent += line.trim().endsWith(":") ? `## ${line.trim()}\n` : `${line.trim()}\n`;
+                        });
+
+                        // Snapshot first 2 pages
+                        if (i <= 2) {
+                            const viewport = page.getViewport({ scale: 1.5 });
+                            const canvas = document.createElement("canvas");
+                            const ctx = canvas.getContext("2d");
+                            canvas.width = viewport.width;
+                            canvas.height = viewport.height;
+                            await page.render({ canvasContext: ctx, viewport }).promise;
+                            slides.push(canvas.toDataURL("image/png"));
+                        }
+                        updateProgress(20 + (i / totalPages) * 60);
+                    }
+
+                    if (!markdownContent.includes("35105")) {
+                        statusEl.textContent = "Verification code 35105 not found.";
+                        statusEl.className = "message error";
+                        resetProgress();
+                        return;
+                    }
+
+                    statusEl.textContent = "Uploading to database...";
+                    await addDoc(collection(db, "partner-deals"), {
+                        fileName: file.name,
+                        verified: true,
+                        markdownContent,
+                        slides,
+                        submittedAt: serverTimestamp()
                     });
 
-                    // Snapshot first 2 pages
-                    if (i <= 2) {
-                        const viewport = page.getViewport({ scale: 1.5 });
-                        const canvas = document.createElement("canvas");
-                        const ctx = canvas.getContext("2d");
-                        canvas.width = viewport.width;
-                        canvas.height = viewport.height;
-                        await page.render({ canvasContext: ctx, viewport }).promise;
-                        slides.push(canvas.toDataURL("image/png"));
-                    }
-                    updateProgress(20 + (i / totalPages) * 60);
-                }
+                    updateProgress(100);
+                    statusEl.textContent = "Success! Review in 2–3 days.";
+                    statusEl.className = "message success";
+                    grecaptcha.reset();
 
-                if (!markdownContent.includes("35105")) {
-                    statusEl.textContent = "Verification code 35105 not found.";
+                } catch (err) {
+                    console.error(err);
+                    statusEl.textContent = "Error processing PDF.";
                     statusEl.className = "message error";
                     resetProgress();
-                    return;
                 }
+            };
+            reader.readAsArrayBuffer(file);
+        }
 
-                statusEl.textContent = "Uploading to database...";
-                await addDoc(collection(db, "partner-deals"), {
-                    fileName: file.name,
-                    verified: true,
-                    markdownContent,
-                    slides,
-                    submittedAt: serverTimestamp()
-                });
+        // Event Listeners
+        dropzone.addEventListener("dragover", (e) => { e.preventDefault(); dropzone.classList.add("highlight"); });
+        dropzone.addEventListener("dragleave", () => { dropzone.classList.remove("highlight"); });
+        dropzone.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropzone.classList.remove("highlight");
+            handleFile(e.dataTransfer.files[0]);
+        });
+        dropzone.addEventListener("click", () => fileInput.click());
+        fileInput.addEventListener("change", () => handleFile(fileInput.files[0]));
+    </script>
 
-                updateProgress(100);
-                statusEl.textContent = "Success! Review in 2–3 days.";
-                statusEl.className = "message success";
-                grecaptcha.reset();
+    <style>
+        /* Essential extra styles for functionality */
+        .highlight {
+            border: 2px dashed #007bff;
+            background: #f0f8ff;
+        }
 
-            } catch (err) {
-                console.error(err);
-                statusEl.textContent = "Error processing PDF.";
-                statusEl.className = "message error";
-                resetProgress();
-            }
-        };
-        reader.readAsArrayBuffer(file);
-    }
+        .message.error {
+            color: #d9534f;
+            font-weight: bold;
+        }
 
-    // Event Listeners
-    dropzone.addEventListener("dragover", (e) => { e.preventDefault(); dropzone.classList.add("highlight"); });
-    dropzone.addEventListener("dragleave", () => { dropzone.classList.remove("highlight"); });
-    dropzone.addEventListener("drop", (e) => { 
-        e.preventDefault(); 
-        dropzone.classList.remove("highlight"); 
-        handleFile(e.dataTransfer.files[0]); 
-    });
-    dropzone.addEventListener("click", () => fileInput.click());
-    fileInput.addEventListener("change", () => handleFile(fileInput.files[0]));
-</script>
+        .message.success {
+            color: #5cb85c;
+            font-weight: bold;
+        }
 
-<style>
-    /* Essential extra styles for functionality */
-    .highlight { border: 2px dashed #007bff; background: #f0f8ff; }
-    .message.error { color: #d9534f; font-weight: bold; }
-    .message.success { color: #5cb85c; font-weight: bold; }
-    .dropzone { cursor: pointer; border: 2px dashed #ccc; padding: 20px; text-align: center; }
-</style>
+        .dropzone {
+            cursor: pointer;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 
 </body>
+
 </html>
