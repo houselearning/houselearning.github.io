@@ -21,7 +21,6 @@
 
   const ANON_ID_KEY = "anonSurveyId_v1";
   const SESSION_BUCKET_KEY = "survey_session_bucket_v1";
-  const SURVEY_RATE_COLLECTION = "survey_rate";
 
   // -----------------------
   // UTIL: load script (FIXED)
