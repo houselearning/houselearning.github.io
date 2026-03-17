@@ -147,7 +147,7 @@
 
         // Right Logo
         var logoContainer = ce("div", { class: "hl-footer-logo" });
-        var logo = ce("img", { src: "/assets/images/favicons/favicon.svg", alt: "HouseLearning Logo" });
+        var logo = ce("img", { src: "/favicon.svg", alt: "HouseLearning Logo" });
         logoContainer.appendChild(logo);
 
         content.appendChild(links);
