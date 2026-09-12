@@ -204,6 +204,42 @@
       </footer>
     </main>
   </div>
+  <script>
+(function () {
+  if (window.HL_SAFEAI_BOOTSTRAPPED) return;
+  window.HL_SAFEAI_BOOTSTRAPPED = true;
+
+  const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  const origin = isLocal ? window.location.origin : 'https://houselearning.org';
+  const currentPath = (window.location.pathname || '/').toLowerCase();
+  const assetBase = currentPath.includes('/home') ? `${origin}/home/assistant` : `${origin}/assistant`;
+
+  const cssUrl = `${assetBase}/assistant.css`;
+  const jsUrl = `${assetBase}/assistant.js`;
+
+  function ensureCss() {
+    if (!document.querySelector(`link[data-hl-safeai-css="true"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cssUrl;
+      link.setAttribute('data-hl-safeai-css', 'true');
+      document.head.appendChild(link);
+    }
+  }
+
+  function ensureScript() {
+    if (document.querySelector(`script[data-hl-safeai-script="true"]`)) return;
+    const script = document.createElement('script');
+    script.src = jsUrl;
+    script.defer = true;
+    script.setAttribute('data-hl-safeai-script', 'true');
+    document.body.appendChild(script);
+  }
+
+  ensureCss();
+  ensureScript();
+})();
+</script>
 </body>
 
 </html>
