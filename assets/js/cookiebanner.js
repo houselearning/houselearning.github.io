@@ -1,5 +1,7 @@
 
 (function () {
+    var localPreview = window.HouseLearningOnlineFeatures && window.HouseLearningOnlineFeatures.isLocal;
+    if (localPreview) return;
     var PRIVACY_URL = "/privacy.html";
     var COOKIE_NAME = "hl_cookie_consent";
     var COOKIE_EXPIRE_DAYS = 365;

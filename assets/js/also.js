@@ -18,6 +18,10 @@ import {
   push
 } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
+if (window.HouseLearningOnlineFeatures && window.HouseLearningOnlineFeatures.isLocal) {
+  console.info("[ALSO] Online features disabled for local preview.");
+} else {
+
 /* ==============================
    🔥 FALLBACK FIREBASE CONFIG
    ============================== */
