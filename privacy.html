@@ -40,7 +40,7 @@
 
     <main class="card page-card page-card--narrow">
         <h1>Privacy Policy for HouseLearning</h1>
-        <p>Last updated: <time datetime="2026-10-22">October 22, 2026</time></p>
+        <p>Last updated: <time datetime="2026-11-01">November 1, 2026</time></p>
       <iframe width="100%" height="439" src="https://www.youtube.com/embed/69sjr6ERbeA"
         title="HouseLearning Privacy Policy Video 2:44" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -136,14 +136,16 @@
             <li><strong>Essential technologies:</strong> Used for core functions such as authentication, security, and
           saving choices. Depending on the processing and applicable law, our legal basis may be contractual necessity
           or legitimate interests in providing and securing the Service.</li>
-            <li><strong>Analytics technologies:</strong> Google Analytics 4 loads on pages using our analytics
-          integration. Google Consent Mode v2 starts with analytics and advertising storage denied. In this state, the
-          tag may send cookieless measurement requests, including page and interaction information; denied storage
-          prevents Google Analytics from using analytics cookies but does not prevent those requests. If you allow
-          analytics storage in cookie preferences, the analytics storage signal is updated to granted. Requests may
-          include page paths and titles, referrer paths, device/browser information, and network information such as
-          an IP address processed by Google. We remove query strings and fragments from page-view URLs. This description
-          is not a representation that analytics data is anonymous.</li>
+            <li><strong>Analytics technologies:</strong> Google Analytics 4 (GA4) loads on pages using our analytics
+          integration. Google Consent Mode v2 starts with analytics and advertising storage denied. While analytics
+          storage is denied, GA4 may still receive cookieless measurement requests; denying storage prevents the tag
+          from using analytics cookies but does not stop those requests or all processing of technical data. These
+          requests may include page paths and titles, referrer paths, timestamps, interaction information, device and
+          browser details, and network information such as an IP address that Google receives and processes. Page-view
+          URLs sent by our integration omit query strings and fragments. If you choose to allow analytics storage in
+          cookie preferences, the analytics-storage signal is updated to granted and GA4 may use analytics cookies.
+          Cookieless requests are not necessarily anonymous and may not provide reliable user-level or cross-session
+          measurement.</li>
             <li><strong>Marketing technologies:</strong> A small number of embedded games load Google AdSense only if
           you enable marketing in cookie preferences. Google may use cookies or similar technologies and process
           online identifiers and device/browser information to deliver and measure ads under its own privacy terms.
@@ -168,15 +170,17 @@
         Cloud Privacy Policy**. We use Firebase services to securely manage user accounts and provide core personalized
         features.</p>
           <h3>Google Analytics 4</h3>
-        <p>We use Google Analytics 4 (GA4) to measure use of the Service. The tag is initialized with Google Consent
-        Mode v2 defaults set to denied and may send cookieless measurement requests before a preference is saved.
-        Cookie preferences control whether analytics storage is granted; rejecting storage does not stop cookieless
-        requests. The SafeLibrary GA4 property is configured with these active web data streams:</p>
+        <p>We use Google Analytics 4 (GA4) to measure use of the Service. The tag sets Google Consent Mode v2
+        defaults for analytics and advertising storage to denied before it loads. GA4 can still send cookieless
+        measurement requests in this denied state, including before you save a cookie preference and after you choose
+        to keep analytics storage denied. That choice prevents analytics-cookie storage; it does not stop these
+        requests. If you allow analytics storage, the tag updates the analytics-storage signal to granted and GA4 may
+        use analytics cookies. Because denied-storage requests do not rely on analytics cookies, they may not support
+        reliable individual active-user counts, returning-user rates, or cross-session attribution. The site
+        integration sends events to these GA4 measurement IDs:</p>
         <ul>
-            <li><strong>SafeLibraryStream</strong>, Measurement ID <code>G-8YSM87GDVW</code>, configured for
-          <code>https://houselearning.github.io/home</code>.</li>
-            <li><strong>HouseLearning</strong>, Measurement ID <code>G-P42LD5XN48</code>, configured for
-          <code>https://houselearning.github.io/home</code>.</li>
+            <li><strong>SafeLibraryStream</strong>, Measurement ID <code>G-8YSM87GDVW</code>.</li>
+            <li><strong>HouseLearning</strong>, Measurement ID <code>G-P42LD5XN48</code>.</li>
         </ul>
         <p>Enhanced Measurement is enabled for these streams. Depending on the page, browser, and available content,
         it can automatically collect:</p>
@@ -189,14 +193,16 @@
             <li>Clicks on links to commonly recognized document, compressed-archive, and executable file types.</li>
             <li>Interactions with and submissions of forms.</li>
         </ul>
-        <p>Google may process information such as online identifiers, device and browser information, page URLs,
-        interaction events, and search terms under its own terms and privacy policy. The denied-storage configuration
-        does not remove all data from requests or guarantee anonymity. See the <a
+        <p>Google may process information in these event requests, including device and browser information, page and
+        referrer paths, interaction events, search terms, and network information under its own terms and privacy
+        policy. We remove query strings and fragments from page-view URLs sent by our integration; this does not change
+        information Google may receive through other events or service requests. Denied storage does not remove all
+        data from requests or guarantee anonymity. See the <a
         href="https://policies.google.com/privacy" target="_blank"
         rel="noopener noreferrer">Google Privacy Policy</a> and the <a href="https://tools.google.com/dlpage/gaoptout"
         target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>. You may change the
-        analytics-storage preference through cookie settings; cookieless measurement requests may continue while
-        analytics storage is denied.</p>
+        analytics-storage preference through cookie settings. Choosing to keep analytics storage denied prevents
+        analytics-cookie use but does not disable cookieless measurement requests described above.</p>
         <h3>Other Third-Party Content and Services</h3>
         <p>The Service may load or link to third-party services, including Google Translate when you request page
         translation, YouTube for embedded video, GitHub and GitHub Pages for hosting or content functions, and external
@@ -240,8 +246,9 @@
         <p>Depending on your location, you have certain rights regarding your Personal Data. You may exercise these
         rights by contacting us using the details in the Contact section.</p>
         <ul>
-            <li>**Right to Withdraw Consent:** You can withdraw your consent to the use of optional cookies (Analytics)
-          at any time. You can do this by clicking the "Manage Cookies" button below.</li>
+            <li>**Right to Withdraw Consent:** You can change your analytics-storage choice at any time using the
+          "Manage Cookies" control below. Keeping analytics storage denied prevents GA4 from using analytics cookies,
+          but cookieless measurement requests may continue as described in Section 3.</li>
             <li>**Right of Access:** You have the right to request copies of your Personal Data.</li>
             <li>**Right to Rectification:** You have the right to request that we correct any information you believe is
           inaccurate or complete information you believe is incomplete.</li>
