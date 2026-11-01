@@ -59,6 +59,10 @@
         isAllowed: function (cat) { var c = parseConsent(); return c ? !!c[cat] : false; },
         onChange: function (fn) { if (typeof fn === "function") changeCallbacks.push(fn); },
         openSettings: function () { openModal(); },
+        acceptAnalytics: function () {
+            var c = { analytics: true, marketing: false, accepted: true, savedAt: new Date().toISOString() };
+            saveConsent(c); hideBanner();
+        },
         acceptAll: function () {
             var c = { analytics: true, marketing: true, accepted: true, savedAt: new Date().toISOString() };
             saveConsent(c); hideBanner();
@@ -83,7 +87,8 @@
   #${MODAL_ID} h3{margin:0 0 8px 0;font-size:18px;color:#071021}
   .hl-toggle-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid #eef3f7}
   .hl-toggle-row:first-of-type{border-top:0}
-  .hl-switch{display:inline-block;width:46px;height:28px;border-radius:999px;background:#e6eef6;position:relative;cursor:pointer}
+  .hl-switch{display:inline-block;width:46px;height:28px;border:0;padding:0;border-radius:999px;background:#e6eef6;position:relative;cursor:pointer;flex:0 0 auto}
+  .hl-switch:disabled{cursor:default}
   .hl-switch .dot{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(11,17,34,0.08);transition:all 0.18s ease}
   .hl-switch.on{background:#c9f6e6}
   .hl-switch.on .dot{left:22px}
@@ -113,19 +118,18 @@
         var left = ce("div", { class: "hl-left" }, [
             ce("h4", {}, ["HouseLearning uses cookies"]),
             ce("p", {}, [
-                "We use cookies to analyze traffic (via Google Analytics), enable logins, and improve the site experience. ",
-                "We may process personal info you provide (like email, name, and login details). ",
-                "Manage your preferences, accept all, or reject all. ",
-                "Tip: Press Alt + C anytime to reopen settings."
+                "Analytics is optional and helps us understand which pages are useful. ",
+                "Essential cookies support sign-in and core features. Choose whether to allow Google Analytics; ",
+                "you can change your choice later in cookie settings."
             ])
         ]);
         var actions = ce("div", { class: "hl-actions" });
-        var manage = ce("button", { class: "hl-btn secondary" }, ["Manage"]);
+        var manage = ce("button", { class: "hl-btn secondary", type: "button" }, ["Settings"]);
         manage.addEventListener("click", openModal);
-        var reject = ce("button", { class: "hl-btn secondary" }, ["Reject All"]);
+        var reject = ce("button", { class: "hl-btn", type: "button" }, ["Reject optional"]);
         reject.addEventListener("click", function () { window.cookieConsent.rejectAll(); });
-        var accept = ce("button", { class: "hl-btn" }, ["Accept All"]);
-        accept.addEventListener("click", function () { window.cookieConsent.acceptAll(); });
+        var accept = ce("button", { class: "hl-btn", type: "button" }, ["Allow analytics"]);
+        accept.addEventListener("click", function () { window.cookieConsent.acceptAnalytics(); });
         var privacy = ce("a", { class: "hl-link", href: PRIVACY_URL, target: "_blank" }, ["Privacy Policy"]);
         [privacy, manage, reject, accept].forEach(x => actions.appendChild(x));
         banner.appendChild(left); banner.appendChild(actions);
@@ -161,20 +165,28 @@
 
     function buildModal() {
         if (qs("#" + MODAL_ID)) return;
-        var modal = ce("div", { id: MODAL_ID, role: "dialog", "aria-modal": "true" });
+        var modal = ce("div", {
+            id: MODAL_ID,
+            role: "dialog",
+            "aria-modal": "true",
+            "aria-labelledby": "hl-consent-title",
+            "aria-describedby": "hl-consent-description",
+            "aria-hidden": "true"
+        });
         modal.innerHTML = `
-      <h3>Cookie preferences</h3>
+      <h3 id="hl-consent-title">Cookie preferences</h3>
+      <p id="hl-consent-description">Analytics is optional. Essential cookies remain on because they support sign-in and core site features.</p>
       <div class="hl-toggle-row">
         <div><strong>Analytics cookies</strong><br><span style="font-size:13px;color:#425466">Helps us understand site usage via Google Analytics.</span></div>
-        <div id="switch-analytics" class="hl-switch"><div class="dot"></div></div>
+        <button type="button" id="switch-analytics" class="hl-switch" role="switch" aria-checked="false" aria-label="Analytics cookies"><span class="dot"></span></button>
       </div>
       <div class="hl-toggle-row">
         <div><strong>Essential cookies</strong><br><span style="font-size:13px;color:#425466">Required for login forms and saving your account session.</span></div>
-        <div class="hl-switch on"><div class="dot"></div></div>
+        <button type="button" class="hl-switch on" role="switch" aria-checked="true" aria-label="Essential cookies" disabled><span class="dot"></span></button>
       </div>
       <div class="hl-toggle-row">
         <div><strong>Marketing cookies</strong><br><span style="font-size:13px;color:#425466">Used for personalized content/ads (currently not used).</span></div>
-        <div id="switch-marketing" class="hl-switch"><div class="dot"></div></div>
+        <button type="button" id="switch-marketing" class="hl-switch" role="switch" aria-checked="false" aria-label="Marketing cookies"><span class="dot"></span></button>
       </div>
       <div class="hl-modal-actions">
         <button id="hl-reject" class="hl-btn secondary">Reject All</button>
@@ -185,7 +197,10 @@
 
         function toggleSwitch(id) {
             var sw = qs(id);
-            if (sw) sw.addEventListener("click", () => sw.classList.toggle("on"));
+            if (sw) sw.addEventListener("click", function () {
+                var enabled = sw.classList.toggle("on");
+                sw.setAttribute("aria-checked", String(enabled));
+            });
         }
         toggleSwitch("#switch-analytics");
         toggleSwitch("#switch-marketing");
@@ -207,11 +222,22 @@
         buildModal();
         var modal = qs("#" + MODAL_ID);
         modal.style.display = "block";
+        modal.setAttribute("aria-hidden", "false");
         var c = parseConsent() || {};
-        if (c.analytics) qs("#switch-analytics").classList.add("on"); else qs("#switch-analytics").classList.remove("on");
-        if (c.marketing) qs("#switch-marketing").classList.add("on"); else qs("#switch-marketing").classList.remove("on");
+        var analyticsSwitch = qs("#switch-analytics");
+        var marketingSwitch = qs("#switch-marketing");
+        analyticsSwitch.classList.toggle("on", !!c.analytics);
+        analyticsSwitch.setAttribute("aria-checked", String(!!c.analytics));
+        marketingSwitch.classList.toggle("on", !!c.marketing);
+        marketingSwitch.setAttribute("aria-checked", String(!!c.marketing));
     }
-    function closeModal() { var m = qs("#" + MODAL_ID); if (m) m.style.display = "none"; }
+    function closeModal() {
+        var modal = qs("#" + MODAL_ID);
+        if (modal) {
+            modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
+        }
+    }
     function hideBanner() { var b = qs("#" + BANNER_ID); if (b) b.style.display = "none"; }
 
     function init() {
