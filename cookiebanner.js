@@ -42,8 +42,30 @@
 
     var changeCallbacks = [];
 
+    function disableAnalytics() {
+        var ids = (window._hlGaMeasurementIds || []).slice();
+        if (window.HouseLearningAnalytics && window.HouseLearningAnalytics.configuredIds) {
+            ids = ids.concat(Object.keys(window.HouseLearningAnalytics.configuredIds));
+        }
+        ids.forEach(function (id) { window["ga-disable-" + id] = true; });
+        window._hlGaPageViewsSent = {};
+        if (typeof window.gtag === "function") {
+            window.gtag("consent", "update", {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied"
+            });
+        }
+    }
+
     function notifyChange(obj) {
-        changeCallbacks.forEach(fn => { try { fn(obj); } catch (e) { } });
+        if (!obj || !obj.analytics) disableAnalytics();
+        changeCallbacks.forEach(fn => {
+            try { fn(obj); } catch (error) {
+                console.error("HouseLearning consent change callback failed.", error);
+            }
+        });
         if (obj && obj.analytics) {
             loadGA();
         }
@@ -59,6 +81,86 @@
         isAllowed: function (cat) { var c = parseConsent(); return c ? !!c[cat] : false; },
         onChange: function (fn) { if (typeof fn === "function") changeCallbacks.push(fn); },
         openSettings: function () { openModal(); },
+        loadAnalytics: function (measurementId) {
+            var consent = parseConsent();
+            if (!consent || !consent.analytics) return false;
+            if (!/^G-[A-Z0-9]+$/.test(measurementId || "")) {
+                console.error("HouseLearning Analytics requires a valid GA4 measurement ID.");
+                return false;
+            }
+
+            window.dataLayer = window.dataLayer || [];
+            if (!Array.isArray(window.dataLayer)) {
+                console.error("HouseLearning Analytics found an invalid data layer.");
+                return false;
+            }
+            if (typeof window.gtag !== "function") {
+                window.gtag = function () { window.dataLayer.push(arguments); };
+            }
+            if (!window._hlConsentDefaultsSet) {
+                window.gtag("consent", "default", {
+                    analytics_storage: "denied",
+                    ad_storage: "denied",
+                    ad_user_data: "denied",
+                    ad_personalization: "denied"
+                });
+                window._hlConsentDefaultsSet = true;
+            }
+            window.gtag("consent", "update", {
+                analytics_storage: "granted",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied"
+            });
+            window["ga-disable-" + measurementId] = false;
+            window._hlGaMeasurementIds = window._hlGaMeasurementIds || [];
+            if (window._hlGaMeasurementIds.indexOf(measurementId) === -1) {
+                window._hlGaMeasurementIds.push(measurementId);
+            }
+            if (!window._hlGtagInitialized) {
+                window.gtag("js", new Date());
+                window._hlGtagInitialized = true;
+            }
+
+            var alreadyConfigured = window.dataLayer.some(function (command) {
+                return command && command[0] === "config" && command[1] === measurementId;
+            });
+            if (!alreadyConfigured) {
+                window.gtag("config", measurementId, { send_page_view: false });
+            }
+            window._hlGaPageViewsSent = window._hlGaPageViewsSent || {};
+            var sharedPageViewSent = window.HouseLearningAnalytics &&
+                window.HouseLearningAnalytics.pageViewsSent &&
+                window.HouseLearningAnalytics.pageViewsSent[measurementId];
+            if (!window._hlGaPageViewsSent[measurementId] && !sharedPageViewSent) {
+                var safeUrl = function (value) {
+                    try {
+                        var url = new URL(value, window.location.href);
+                        return url.origin + url.pathname;
+                    } catch (error) {
+                        return "";
+                    }
+                };
+                window.gtag("event", "page_view", {
+                    send_to: measurementId,
+                    page_location: safeUrl(window.location.href),
+                    page_title: document.title,
+                    page_referrer: safeUrl(document.referrer) || undefined
+                });
+                window._hlGaPageViewsSent[measurementId] = true;
+            }
+
+            if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+                var gtagScript = document.createElement("script");
+                gtagScript.async = true;
+                gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+                gtagScript.onerror = function () {
+                    console.error("HouseLearning Analytics could not load the Google tag.");
+                };
+                document.head.appendChild(gtagScript);
+            }
+            return true;
+        },
         acceptAnalytics: function () {
             var c = { analytics: true, marketing: false, accepted: true, savedAt: new Date().toISOString() };
             saveConsent(c); hideBanner();
@@ -185,7 +287,7 @@
         <button type="button" class="hl-switch on" role="switch" aria-checked="true" aria-label="Essential cookies" disabled><span class="dot"></span></button>
       </div>
       <div class="hl-toggle-row">
-        <div><strong>Marketing cookies</strong><br><span style="font-size:13px;color:#425466">Used for personalized content/ads (currently not used).</span></div>
+        <div><strong>Marketing cookies</strong><br><span style="font-size:13px;color:#425466">Allows Google AdSense to load on select games.</span></div>
         <button type="button" id="switch-marketing" class="hl-switch" role="switch" aria-checked="false" aria-label="Marketing cookies"><span class="dot"></span></button>
       </div>
       <div class="hl-modal-actions">
@@ -257,18 +359,7 @@
     });
 
     function loadGA() {
-        if (window._gaLoaded) return;
-        window._gaLoaded = true;
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-P42LD5XN48";
-        document.head.appendChild(gtagScript);
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        window.gtag = gtag;
-        gtag("js", new Date());
-        gtag("config", "G-P42LD5XN48");
+        window._gaLoaded = window.cookieConsent.loadAnalytics("G-P42LD5XN48");
     }
 
     var initialConsent = parseConsent();
