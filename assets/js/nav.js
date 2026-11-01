@@ -1,4 +1,12 @@
 (() => {
+  if (!window.HouseLearningSiteRuntime && !document.querySelector('script[data-houselearning-runtime="true"]')) {
+    const runtime = document.createElement('script');
+    runtime.src = 'https://www.houselearning.org/home/site-runtime.js';
+    runtime.defer = true;
+    runtime.dataset.houselearningRuntime = 'true';
+    (document.head || document.documentElement).append(runtime);
+  }
+
   const toggle = document.querySelector(".nav-toggle");
   if (!toggle) return;
 

@@ -3,7 +3,7 @@
    ================================ */
 
 (() => {
-  const XML_PATH = "/search-task.xml";
+  const XML_PATH = "https://www.houselearning.org/home/meta/sitemap.xml";
 
   function formatUrlToTitle(url) {
     try {
@@ -54,6 +54,7 @@
 
   class NavXMLSearch {
     constructor(nav) {
+      if (nav.querySelector('.hl-sitemap-search')) return;
       this.nav = nav;
       this.data = [];
       this.init();
