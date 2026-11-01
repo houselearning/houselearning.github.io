@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head><script src="offline-features.js"></script>
-  <script src="https://www.houselearning.org/cookiebanner.js?v=consent-choice-v3"></script>
+  <script src="https://www.houselearning.org/cookiebanner.js?v=consent-choice-v4"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy | HouseLearning</title>
@@ -136,10 +136,14 @@
             <li><strong>Essential technologies:</strong> Used for core functions such as authentication, security, and
           saving choices. Depending on the processing and applicable law, our legal basis may be contractual necessity
           or legitimate interests in providing and securing the Service.</li>
-            <li><strong>Analytics technologies:</strong> Google Analytics measures site usage and is loaded on this
-          website only when analytics consent is enabled in the cookie preferences. It may collect online identifiers,
-          device/browser information, page and interaction data, and other usage information described below. We do not
-          represent all analytics data as anonymous. Where required, the legal basis is your consent.</li>
+            <li><strong>Analytics technologies:</strong> Google Analytics 4 loads on pages using our analytics
+          integration. Google Consent Mode v2 starts with analytics and advertising storage denied. In this state, the
+          tag may send cookieless measurement requests, including page and interaction information; denied storage
+          prevents Google Analytics from using analytics cookies but does not prevent those requests. If you allow
+          analytics storage in cookie preferences, the analytics storage signal is updated to granted. Requests may
+          include page paths and titles, referrer paths, device/browser information, and network information such as
+          an IP address processed by Google. We remove query strings and fragments from page-view URLs. This description
+          is not a representation that analytics data is anonymous.</li>
             <li><strong>Marketing technologies:</strong> A small number of embedded games load Google AdSense only if
           you enable marketing in cookie preferences. Google may use cookies or similar technologies and process
           online identifiers and device/browser information to deliver and measure ads under its own privacy terms.
@@ -164,8 +168,10 @@
         Cloud Privacy Policy**. We use Firebase services to securely manage user accounts and provide core personalized
         features.</p>
           <h3>Google Analytics 4</h3>
-        <p>We use Google Analytics 4 (GA4) to measure use of the Service, subject to your analytics cookie choice.
-        The SafeLibrary GA4 property is configured with these active web data streams:</p>
+        <p>We use Google Analytics 4 (GA4) to measure use of the Service. The tag is initialized with Google Consent
+        Mode v2 defaults set to denied and may send cookieless measurement requests before a preference is saved.
+        Cookie preferences control whether analytics storage is granted; rejecting storage does not stop cookieless
+        requests. The SafeLibrary GA4 property is configured with these active web data streams:</p>
         <ul>
             <li><strong>SafeLibraryStream</strong>, Measurement ID <code>G-8YSM87GDVW</code>, configured for
           <code>https://houselearning.github.io/home</code>.</li>
@@ -184,11 +190,13 @@
             <li>Interactions with and submissions of forms.</li>
         </ul>
         <p>Google may process information such as online identifiers, device and browser information, page URLs,
-        interaction events, and search terms under its own terms and privacy policy. Google Analytics data is not
-        necessarily anonymous. See the <a href="https://policies.google.com/privacy" target="_blank"
+        interaction events, and search terms under its own terms and privacy policy. The denied-storage configuration
+        does not remove all data from requests or guarantee anonymity. See the <a
+        href="https://policies.google.com/privacy" target="_blank"
         rel="noopener noreferrer">Google Privacy Policy</a> and the <a href="https://tools.google.com/dlpage/gaoptout"
-        target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>. You may also withdraw
-        analytics consent through the cookie preferences control on this website.</p>
+        target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>. You may change the
+        analytics-storage preference through cookie settings; cookieless measurement requests may continue while
+        analytics storage is denied.</p>
         <h3>Other Third-Party Content and Services</h3>
         <p>The Service may load or link to third-party services, including Google Translate when you request page
         translation, YouTube for embedded video, GitHub and GitHub Pages for hosting or content functions, and external

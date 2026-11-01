@@ -1,5 +1,26 @@
 
 (function () {
+    // Denied defaults allow cookieless measurement pings without granting storage.
+    var consentDefaults = {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        wait_for_update: 500
+    };
+    window.dataLayer = window.dataLayer || [];
+    if (!Array.isArray(window.dataLayer)) {
+        console.error("HouseLearning Analytics found an invalid data layer.");
+        return;
+    }
+    if (typeof window.gtag !== "function") {
+        window.gtag = function () { window.dataLayer.push(arguments); };
+    }
+    if (!window._hlConsentDefaultsSet) {
+        window.gtag("consent", "default", consentDefaults);
+        window._hlConsentDefaultsSet = true;
+    }
+
     var localPreview = window.HouseLearningOnlineFeatures && window.HouseLearningOnlineFeatures.isLocal;
     if (localPreview) return;
     var PRIVACY_URL = "/privacy.html";
@@ -42,33 +63,24 @@
 
     var changeCallbacks = [];
 
-    function disableAnalytics() {
-        var ids = (window._hlGaMeasurementIds || []).slice();
-        if (window.HouseLearningAnalytics && window.HouseLearningAnalytics.configuredIds) {
-            ids = ids.concat(Object.keys(window.HouseLearningAnalytics.configuredIds));
-        }
-        ids.forEach(function (id) { window["ga-disable-" + id] = true; });
-        window._hlGaPageViewsSent = {};
-        if (typeof window.gtag === "function") {
-            window.gtag("consent", "update", {
-                analytics_storage: "denied",
-                ad_storage: "denied",
-                ad_user_data: "denied",
-                ad_personalization: "denied"
-            });
-        }
+    function updateGoogleConsent(consent) {
+        consent = consent || {};
+        window.gtag("consent", "update", {
+            analytics_storage: consent.analytics ? "granted" : "denied",
+            ad_storage: consent.marketing ? "granted" : "denied",
+            ad_user_data: consent.marketing ? "granted" : "denied",
+            ad_personalization: consent.marketing ? "granted" : "denied"
+        });
     }
 
     function notifyChange(obj) {
-        if (!obj || !obj.analytics) disableAnalytics();
+        updateGoogleConsent(obj);
         changeCallbacks.forEach(fn => {
             try { fn(obj); } catch (error) {
                 console.error("HouseLearning consent change callback failed.", error);
             }
         });
-        if (obj && obj.analytics) {
-            loadGA();
-        }
+        loadGA();
     }
 
     function saveConsent(obj) {
@@ -76,91 +88,101 @@
         notifyChange(obj);
     }
 
+    function initializeAnalytics(measurementId) {
+        if (!/^G-[A-Z0-9]+$/.test(measurementId || "")) {
+            console.error("HouseLearning Analytics requires a valid GA4 measurement ID.");
+            return false;
+        }
+
+        if (!Array.isArray(window.dataLayer)) {
+            console.error("HouseLearning Analytics found an invalid data layer.");
+            return false;
+        }
+        if (typeof window.gtag !== "function") {
+            window.gtag = function () { window.dataLayer.push(arguments); };
+        }
+        if (!window._hlConsentDefaultsSet) {
+            window.gtag("consent", "default", consentDefaults);
+            window._hlConsentDefaultsSet = true;
+        }
+
+        updateGoogleConsent(parseConsent());
+        window._hlGaMeasurementIds = window._hlGaMeasurementIds || [];
+        if (window._hlGaMeasurementIds.indexOf(measurementId) === -1) {
+            window._hlGaMeasurementIds.push(measurementId);
+        }
+        if (!window._hlGtagInitialized) {
+            window.gtag("js", new Date());
+            window._hlGtagInitialized = true;
+        }
+
+        var alreadyConfigured = window.dataLayer.some(function (command) {
+            return command && command[0] === "config" && command[1] === measurementId;
+        });
+        if (!alreadyConfigured) {
+            window.gtag("config", measurementId, {
+                send_page_view: false,
+                allow_google_signals: false,
+                allow_ad_personalization_signals: false
+            });
+        }
+
+        queuePageView(measurementId);
+
+        if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+            var gtagScript = document.createElement("script");
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+            gtagScript.onerror = function () {
+                console.error("HouseLearning Analytics could not load the Google tag.");
+            };
+            document.head.appendChild(gtagScript);
+        }
+        return true;
+    }
+
+    function queuePageView(measurementId) {
+        window._hlGaPageViewsPending = window._hlGaPageViewsPending || {};
+        if (document.readyState === "loading") {
+            if (window._hlGaPageViewsPending[measurementId]) return;
+            window._hlGaPageViewsPending[measurementId] = true;
+            document.addEventListener("DOMContentLoaded", function () {
+                window._hlGaPageViewsPending[measurementId] = false;
+                queuePageView(measurementId);
+            }, { once: true });
+            return;
+        }
+
+        var safeUrl = function (value) {
+            try {
+                var url = new URL(value, window.location.href);
+                return url.origin + url.pathname;
+            } catch (error) {
+                return "";
+            }
+        };
+        var pageLocation = safeUrl(window.location.href);
+        var pageTitle = document.title || "HouseLearning";
+        var pageKey = pageLocation + "\n" + pageTitle;
+        window._hlGaPageViewsSent = window._hlGaPageViewsSent || {};
+        if (window._hlGaPageViewsSent[measurementId] !== pageKey) {
+            window.gtag("event", "page_view", {
+                send_to: measurementId,
+                page_location: pageLocation,
+                page_title: pageTitle,
+                page_referrer: safeUrl(document.referrer) || undefined
+            });
+            window._hlGaPageViewsSent[measurementId] = pageKey;
+        }
+    }
+
     window.cookieConsent = {
         get: function () { return parseConsent(); },
         isAllowed: function (cat) { var c = parseConsent(); return c ? !!c[cat] : false; },
         onChange: function (fn) { if (typeof fn === "function") changeCallbacks.push(fn); },
         openSettings: function () { openModal(); },
-        loadAnalytics: function (measurementId) {
-            var consent = parseConsent();
-            if (!consent || !consent.analytics) return false;
-            if (!/^G-[A-Z0-9]+$/.test(measurementId || "")) {
-                console.error("HouseLearning Analytics requires a valid GA4 measurement ID.");
-                return false;
-            }
-
-            window.dataLayer = window.dataLayer || [];
-            if (!Array.isArray(window.dataLayer)) {
-                console.error("HouseLearning Analytics found an invalid data layer.");
-                return false;
-            }
-            if (typeof window.gtag !== "function") {
-                window.gtag = function () { window.dataLayer.push(arguments); };
-            }
-            if (!window._hlConsentDefaultsSet) {
-                window.gtag("consent", "default", {
-                    analytics_storage: "denied",
-                    ad_storage: "denied",
-                    ad_user_data: "denied",
-                    ad_personalization: "denied"
-                });
-                window._hlConsentDefaultsSet = true;
-            }
-            window.gtag("consent", "update", {
-                analytics_storage: "granted",
-                ad_storage: "denied",
-                ad_user_data: "denied",
-                ad_personalization: "denied"
-            });
-            window["ga-disable-" + measurementId] = false;
-            window._hlGaMeasurementIds = window._hlGaMeasurementIds || [];
-            if (window._hlGaMeasurementIds.indexOf(measurementId) === -1) {
-                window._hlGaMeasurementIds.push(measurementId);
-            }
-            if (!window._hlGtagInitialized) {
-                window.gtag("js", new Date());
-                window._hlGtagInitialized = true;
-            }
-
-            var alreadyConfigured = window.dataLayer.some(function (command) {
-                return command && command[0] === "config" && command[1] === measurementId;
-            });
-            if (!alreadyConfigured) {
-                window.gtag("config", measurementId, { send_page_view: false });
-            }
-            window._hlGaPageViewsSent = window._hlGaPageViewsSent || {};
-            var sharedPageViewSent = window.HouseLearningAnalytics &&
-                window.HouseLearningAnalytics.pageViewsSent &&
-                window.HouseLearningAnalytics.pageViewsSent[measurementId];
-            if (!window._hlGaPageViewsSent[measurementId] && !sharedPageViewSent) {
-                var safeUrl = function (value) {
-                    try {
-                        var url = new URL(value, window.location.href);
-                        return url.origin + url.pathname;
-                    } catch (error) {
-                        return "";
-                    }
-                };
-                window.gtag("event", "page_view", {
-                    send_to: measurementId,
-                    page_location: safeUrl(window.location.href),
-                    page_title: document.title,
-                    page_referrer: safeUrl(document.referrer) || undefined
-                });
-                window._hlGaPageViewsSent[measurementId] = true;
-            }
-
-            if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
-                var gtagScript = document.createElement("script");
-                gtagScript.async = true;
-                gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
-                gtagScript.onerror = function () {
-                    console.error("HouseLearning Analytics could not load the Google tag.");
-                };
-                document.head.appendChild(gtagScript);
-            }
-            return true;
-        },
+        initializeAnalytics: initializeAnalytics,
+        loadAnalytics: initializeAnalytics,
         acceptAnalytics: function () {
             var c = { analytics: true, marketing: false, accepted: true, savedAt: new Date().toISOString() };
             saveConsent(c); hideBanner();
@@ -218,19 +240,19 @@
         if (qs("#" + BANNER_ID)) return;
         var banner = ce("div", { id: BANNER_ID });
         var left = ce("div", { class: "hl-left" }, [
-            ce("h4", {}, ["HouseLearning uses cookies"]),
+            ce("h4", {}, ["HouseLearning uses analytics"]),
             ce("p", {}, [
-                "Analytics is optional and helps us understand which pages are useful. ",
-                "Essential cookies support sign-in and core features. Choose whether to allow Google Analytics; ",
-                "you can change your choice later in cookie settings."
+                "Basic cookieless Google Analytics pings run by default while analytics storage is denied. ",
+                "Allow analytics storage to let Google use analytics cookies; essential cookies support sign-in ",
+                "and core features. You can change your storage choice later in cookie settings."
             ])
         ]);
         var actions = ce("div", { class: "hl-actions" });
         var manage = ce("button", { class: "hl-btn secondary", type: "button" }, ["Settings"]);
         manage.addEventListener("click", openModal);
-        var reject = ce("button", { class: "hl-btn", type: "button" }, ["Reject optional"]);
+        var reject = ce("button", { class: "hl-btn", type: "button" }, ["Keep storage denied"]);
         reject.addEventListener("click", function () { window.cookieConsent.rejectAll(); });
-        var accept = ce("button", { class: "hl-btn", type: "button" }, ["Allow analytics"]);
+        var accept = ce("button", { class: "hl-btn", type: "button" }, ["Allow analytics storage"]);
         accept.addEventListener("click", function () { window.cookieConsent.acceptAnalytics(); });
         var privacy = ce("a", { class: "hl-link", href: PRIVACY_URL, target: "_blank" }, ["Privacy Policy"]);
         [privacy, manage, reject, accept].forEach(x => actions.appendChild(x));
@@ -277,9 +299,9 @@
         });
         modal.innerHTML = `
       <h3 id="hl-consent-title">Cookie preferences</h3>
-      <p id="hl-consent-description">Analytics is optional. Essential cookies remain on because they support sign-in and core site features.</p>
+      <p id="hl-consent-description">Basic cookieless Google Analytics pings run by default. This choice controls whether Google may use analytics storage. Essential cookies support sign-in and core site features.</p>
       <div class="hl-toggle-row">
-        <div><strong>Analytics cookies</strong><br><span style="font-size:13px;color:#425466">Helps us understand site usage via Google Analytics.</span></div>
+        <div><strong>Analytics storage</strong><br><span style="font-size:13px;color:#425466">Off by default; basic cookieless measurement pings still run.</span></div>
         <button type="button" id="switch-analytics" class="hl-switch" role="switch" aria-checked="false" aria-label="Analytics cookies"><span class="dot"></span></button>
       </div>
       <div class="hl-toggle-row">
@@ -291,7 +313,7 @@
         <button type="button" id="switch-marketing" class="hl-switch" role="switch" aria-checked="false" aria-label="Marketing cookies"><span class="dot"></span></button>
       </div>
       <div class="hl-modal-actions">
-        <button id="hl-reject" class="hl-btn secondary">Reject All</button>
+        <button id="hl-reject" class="hl-btn secondary">Keep storage denied</button>
         <button id="hl-cancel" class="hl-btn secondary">Cancel</button>
         <button id="hl-save" class="hl-btn">Save preferences</button>
       </div>`;
@@ -359,12 +381,8 @@
     });
 
     function loadGA() {
-        window._gaLoaded = window.cookieConsent.loadAnalytics("G-P42LD5XN48");
+        window._gaLoaded = window.cookieConsent.initializeAnalytics("G-P42LD5XN48");
     }
 
-    var initialConsent = parseConsent();
-    if (initialConsent && initialConsent.analytics) {
-        loadGA();
-    }
-
+    loadGA();
 })();
