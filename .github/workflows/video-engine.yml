@@ -1,0 +1,64 @@
+name: Publish Video Engine
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}video-engine/
+    steps:
+      - name: Check out HouseLearning Pages repository
+        uses: actions/checkout@v4
+
+      - name: Check out Video Engine repository
+        uses: actions/checkout@v4
+        with:
+          repository: houselearning/video-engine
+          ref: master
+          path: video-engine-source
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build Video Engine
+        working-directory: video-engine-source
+        run: |
+          npm ci
+          npm test
+          npm run build
+
+      - name: Install Video Engine output
+        run: |
+          rm -rf video-engine
+          mkdir -p video-engine
+          cp -R video-engine-source/dist/. video-engine/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
