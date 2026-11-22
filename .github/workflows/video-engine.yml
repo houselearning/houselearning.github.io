@@ -41,9 +41,10 @@ jobs:
       - name: Build Video Engine
         working-directory: video-engine-source
         run: |
-          npm ci
+          npm install --no-audit --no-fund
           npm test
           npm run build
+          test -f dist/index.html
 
       - name: Install Video Engine output
         run: |
